@@ -1,2 +1,2 @@
 # Battle.io-ac
-Battle,io client and assets
+Battle.io client and assets
