@@ -5,7 +5,7 @@ extends Node2D
 @onready var game_hud = $Player/HUD
 
 func _ready () -> void:
-	game_hud.Init_health_bar(player.stat_health, player.current_health)
+	game_hud.Init_bars(player.stat_health, player.current_health, player.stat_mana, player.current_mana)
 	player._on_health_changed.connect(game_hud.Update_health_bar)
 	player._on_ability_used.connect(game_hud.Start_cooldown)
 	

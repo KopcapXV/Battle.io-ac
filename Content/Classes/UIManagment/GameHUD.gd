@@ -2,9 +2,13 @@ extends Node
 
 class_name GameHUD
 
-@onready var health_bar 		= $Control/HealthBar
-@onready var damage_bar 		= $Control/DamageBar
-@onready var ability_cooldown 	= $Control/AbilityIcon/AbilityCooldown
+@export var health_bar : ProgressBar
+@export var damage_bar : ProgressBar
+
+@export var mana_bar   : ProgressBar
+@export var leak_bar   : ProgressBar
+		
+@export var ability_cooldown : TextureProgressBar
 
 var health_tween : Tween
 
@@ -12,11 +16,20 @@ func _ready () -> void:
 	ability_cooldown.value = 0
 
 # --- Function for initializaing HUD's health bar
-func Init_health_bar (stat_health : float, current_health : float) -> void:
-	health_bar.max_value = stat_health
-	health_bar.value = current_health
-	damage_bar.max_value = stat_health
-	damage_bar.value = current_health
+func Init_bars (
+	stat_health 	: float, 
+	current_health 	: float,
+	stat_mana 		: float,
+	current_mana	: float
+) -> void:
+	health_bar.max_value 	= stat_health
+	health_bar.value 		= current_health
+	damage_bar.max_value 	= stat_health
+	damage_bar.value 		= current_health
+	mana_bar.max_value 		= stat_mana
+	mana_bar.value 			= current_mana
+	leak_bar.max_value 		= stat_mana
+	leak_bar.value 			= current_mana
 
 # --- Function for updating values of HUD's health bar
 func Update_health_bar (new_health) -> void:
@@ -30,7 +43,6 @@ func Update_health_bar (new_health) -> void:
 		health_tween = create_tween()
 		health_tween.tween_interval(0.1)
 		health_tween.tween_property(damage_bar, "value", new_health, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	
 	else:
 		damage_bar.value = new_health
 	

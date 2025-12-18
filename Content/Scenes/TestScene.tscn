@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ceenn2qent2x1"]
+[gd_scene load_steps=25 format=3 uid="uid://ceenn2qent2x1"]
 
 [ext_resource type="Texture2D" uid="uid://b3gw10tts6iky" path="res://Content/Assets/Tilesets/Grass.png" id="1_5lt6y"]
 [ext_resource type="Script" uid="uid://ci6roeejn6265" path="res://Content/Classes/UIManagment/GameSceneConnector.gd" id="1_201fe"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://djbrlmbl6vn4r" path="res://Content/Assets/UI/Healthbar.png" id="11_fo1ni"]
 [ext_resource type="Texture2D" uid="uid://dimkgr7byggox" path="res://Content/Assets/UI/Ability_curtain.png" id="11_rt42n"]
 [ext_resource type="Texture2D" uid="uid://dbv6q3yyfhnbi" path="res://Content/Assets/UI/Ability_Quiet_1.png" id="12_avgqa"]
+[ext_resource type="Texture2D" uid="uid://cdxsinqvefske" path="res://Content/Assets/UI/Manabar.png" id="14_rt42n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8k7wh"]
 texture = ExtResource("1_5lt6y")
@@ -687,11 +688,14 @@ sources/4 = SubResource("TileSetAtlasSource_6xh1p")
 sources/5 = SubResource("TileSetAtlasSource_5rbs6")
 sources/6 = SubResource("TileSetAtlasSource_201fe")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yp6n"]
+bg_color = Color(0.5019608, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fo1ni"]
 bg_color = Color(0.9529412, 0.39607844, 0.3647059, 0.91764706)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yp6n"]
-bg_color = Color(0.5019608, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt42n"]
+bg_color = Color(0, 0.5019608, 0.99607843, 1)
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_201fe")
@@ -717,45 +721,74 @@ position = Vector2(-304, -149)
 anchor_mode = 0
 zoom = Vector2(2, 2)
 
-[node name="HUD" type="CanvasLayer" parent="Player"]
+[node name="HUD" type="CanvasLayer" parent="Player" node_paths=PackedStringArray("health_bar", "damage_bar", "mana_bar", "leak_bar", "ability_cooldown")]
 script = ExtResource("8_5rbs6")
+health_bar = NodePath("HealthBar/HealthBar")
+damage_bar = NodePath("HealthBar/DamageBar")
+mana_bar = NodePath("ManaBar/ManaBar")
+leak_bar = NodePath("ManaBar/LeakBar")
+ability_cooldown = NodePath("Ability/AbilityHolder/AbilityCooldown")
 
-[node name="Control" type="Control" parent="Player/HUD"]
+[node name="HealthBar" type="Control" parent="Player/HUD"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -142.0
+offset_right = 136.0
+offset_bottom = -94.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+metadata/_edit_use_anchors_ = true
 
-[node name="HealthBar" type="ProgressBar" parent="Player/HUD/Control"]
-z_index = 1
+[node name="DamageBar" type="ProgressBar" parent="Player/HUD/HealthBar"]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 576.0
-offset_right = 377.0
-offset_bottom = 629.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_fo1ni")
-show_percentage = false
-
-[node name="DamageBar" type="ProgressBar" parent="Player/HUD/Control"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 576.0
-offset_right = 377.0
-offset_bottom = 629.0
+offset_left = 12.0
+offset_top = 15.99999
+offset_right = 132.0
+offset_bottom = 33.999992
 theme_override_styles/fill = SubResource("StyleBoxFlat_0yp6n")
 show_percentage = false
 
-[node name="AbilityIcon" type="TextureRect" parent="Player/HUD/Control"]
-layout_mode = 1
-offset_left = 1028.0
-offset_top = 516.0
-offset_right = 1066.0
-offset_bottom = 555.0
+[node name="HealthBar" type="ProgressBar" parent="Player/HUD/HealthBar"]
+z_index = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 16.0
+offset_right = 132.0
+offset_bottom = 34.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_fo1ni")
+show_percentage = false
+
+[node name="HealthBarIcon" type="TextureRect" parent="Player/HUD/HealthBar"]
+z_index = 1
+layout_mode = 0
+offset_left = 8.0
+offset_right = 136.0
+offset_bottom = 48.0
+texture = ExtResource("11_fo1ni")
+
+[node name="Ability" type="HBoxContainer" parent="Player/HUD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -131.0
+offset_right = -83.0
+offset_bottom = -91.0
+grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(3, 3)
+
+[node name="AbilityHolder" type="TextureRect" parent="Player/HUD/Ability"]
+layout_mode = 2
 texture = ExtResource("10_mt481")
 stretch_mode = 2
 
-[node name="AbilityCooldown" type="TextureProgressBar" parent="Player/HUD/Control/AbilityIcon"]
+[node name="AbilityCooldown" type="TextureProgressBar" parent="Player/HUD/Ability/AbilityHolder"]
 layout_mode = 0
 offset_left = 9.000011
 offset_top = 10.0
@@ -764,7 +797,7 @@ offset_bottom = 36.0
 fill_mode = 2
 texture_progress = ExtResource("11_rt42n")
 
-[node name="TextureRect" type="TextureRect" parent="Player/HUD/Control/AbilityIcon"]
+[node name="AbilityIcon" type="TextureRect" parent="Player/HUD/Ability/AbilityHolder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.123
@@ -775,12 +808,39 @@ offset_right = -0.0073432922
 offset_bottom = -0.017002106
 texture = ExtResource("12_avgqa")
 
-[node name="Healthbar" type="TextureRect" parent="Player/HUD/Control"]
+[node name="ManaBar" type="Control" parent="Player/HUD"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -90.0
+offset_right = 48.0
+offset_bottom = -50.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="ManaBar" type="ProgressBar" parent="Player/HUD/ManaBar"]
 z_index = 1
 layout_mode = 0
-offset_left = 5.0
-offset_top = 528.0
-offset_right = 133.0
-offset_bottom = 576.0
-scale = Vector2(3, 3)
-texture = ExtResource("11_fo1ni")
+offset_left = 4.0
+offset_top = 12.0
+offset_right = 124.0
+offset_bottom = 30.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_rt42n")
+show_percentage = false
+
+[node name="LeakBar" type="ProgressBar" parent="Player/HUD/ManaBar"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 12.0
+offset_right = 124.0
+offset_bottom = 30.0
+show_percentage = false
+
+[node name="ManaBarIcon" type="TextureRect" parent="Player/HUD/ManaBar"]
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("14_rt42n")
