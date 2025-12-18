@@ -278,7 +278,8 @@ shape = SubResource("CapsuleShape2D_c7jvw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k5has")
-animation = &"attack"
+animation = &"move"
+autoplay = "move"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_io258")

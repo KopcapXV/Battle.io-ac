@@ -7,14 +7,14 @@ var current_state 			: State
 var states 					: Dictionary = {}
 
 func _ready () -> void:
-	# Registration of all child states
-	# States of the 'Battle.io' classes as nodes
+	# -- Registration of all child states
+	# -- States of the 'Battle.io' classes as nodes
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
 			child.its_state_machine = self
 			child.its_state_object  = self.get_parent()
-			
+	# -- Changing the state		
 	if initial_state:
 		Change_state(initial_state.name.to_lower())
 	

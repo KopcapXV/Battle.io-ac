@@ -2,7 +2,7 @@ extends State
 
 class_name StateDashAttack
 
-@export var dash_distance: float = 460.0
+@export var dash_distance: float = 95.0
 
 # / Enter state function /
 # Use: Put extra conditions and dependencies

@@ -6,7 +6,7 @@ var for_animation_object
 
 var for_collision_object 
 
-var stat_speed 	: float = 300
+var stat_speed 	: float = 150
 
 
 func _ready ():
