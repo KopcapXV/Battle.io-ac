@@ -1,149 +1,332 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk2sw51iswc8e"]
+[gd_scene load_steps=47 format=3 uid="uid://bk2sw51iswc8e"]
 
-[ext_resource type="Texture2D" uid="uid://5ks2st5d7ri2" path="res://Content/Assets/UI/Background.png" id="1_8shnc"]
 [ext_resource type="Script" uid="uid://41wepuuba76j" path="res://Content/Classes/UIManagment/UIManager.gd" id="1_hcmuh"]
+[ext_resource type="Texture2D" uid="uid://5ks2st5d7ri2" path="res://Content/Assets/UI/Background/Background.png" id="2_4t6kl"]
 [ext_resource type="Texture2D" uid="uid://dlgjknn3ihwet" path="res://Content/Assets/UI/Menu.png" id="2_hcmuh"]
 [ext_resource type="Texture2D" uid="uid://c0ewqct877f5p" path="res://Content/Assets/UI/Button.png" id="3_4ls13"]
+[ext_resource type="Texture2D" uid="uid://cyn7pgefypnnf" path="res://Content/Assets/UI/Background/BG-Idle1.png" id="3_rmkcw"]
+[ext_resource type="Texture2D" uid="uid://m5qscjw5mvva" path="res://Content/Assets/UI/Background/BG-Idle2.png" id="4_2j6l0"]
 [ext_resource type="FontFile" uid="uid://2lp54jjc5bhb" path="res://Content/Assets/Fonts/zx_spectrum-7_bold.ttf" id="4_4ls13"]
-[ext_resource type="Texture2D" uid="uid://c80tcrh27mawm" path="res://Content/Assets/UI/Settings_menu.png" id="4_un2e4"]
 [ext_resource type="Texture2D" uid="uid://xga6ve2ux052" path="res://Content/Assets/UI/Main_menu_placeholder.png" id="5_pd731"]
+[ext_resource type="Texture2D" uid="uid://spqscyp8plps" path="res://Content/Assets/UI/Background/BG-Idle3.png" id="5_rmkcw"]
+[ext_resource type="Script" uid="uid://dckov4qr6eevd" path="res://Content/Classes/UIManagment/BackgroundManager.gd" id="6_2j6l0"]
 [ext_resource type="Texture2D" uid="uid://bmt5mg0u8qvsi" path="res://Content/Assets/UI/Empty_sheet_menu.png" id="6_ynag5"]
 [ext_resource type="Texture2D" uid="uid://r30uer4tp55g" path="res://Content/Assets/UI/leaderboard_placeholder.png" id="7_eaahh"]
+[ext_resource type="Script" uid="uid://ygkicfnmw80c" path="res://Content/Classes/UIManagment/SettingsManager.gd" id="7_ntfnx"]
+[ext_resource type="Texture2D" uid="uid://51druonmrnva" path="res://Content/Assets/UI/Settings.png" id="9_r3l1u"]
+[ext_resource type="Script" uid="uid://d0pmi1i1b8hc1" path="res://Content/Classes/UIManagment/LeaderboardManager.gd" id="11_0nvf4"]
+[ext_resource type="Texture2D" uid="uid://drgyoos23823n" path="res://Content/Assets/UI/Grabber.png" id="11_1lec1"]
+[ext_resource type="Texture2D" uid="uid://54jquvqkpsi7" path="res://Content/Assets/UI/Slider.png" id="12_r3l1u"]
 
-[node name="UISegment" type="Control"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiu1e"]
+atlas = ExtResource("2_4t6kl")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwm1n"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evxs1"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(576, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4855k"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(1152, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnhaw"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(1728, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jnq7"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(2304, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2bqy"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vdgs"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(576, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b64ag"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(1152, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drfiy"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(1728, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovcgw"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(2304, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3qy0"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(2880, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq4af"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(3456, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkwvo"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(4032, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8gk5"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(4608, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pot4p"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(5184, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j6l0"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1c7k"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(576, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mute0"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(1152, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clpa6"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(1728, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53lyk"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(2304, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky1bw"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(2880, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rau6h"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(3456, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idnka"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(4032, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0881"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(4608, 0, 576, 324)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1c7k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiu1e")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwm1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evxs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4855k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnhaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jnq7")
+}],
+"loop": false,
+"name": &"idle_1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2bqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vdgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b64ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drfiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovcgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3qy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq4af")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkwvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8gk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pot4p")
+}],
+"loop": false,
+"name": &"idle_2",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j6l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1c7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mute0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clpa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53lyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky1bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rau6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idnka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0881")
+}],
+"loop": false,
+"name": &"idle_3",
+"speed": 8.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3l1u"]
+texture = ExtResource("12_r3l1u")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3l1u"]
+bg_color = Color(0.4392157, 0.38431373, 0.08235294, 1)
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lec1"]
+bg_color = Color(0.4392157, 0.38431373, 0.08235294, 1)
+expand_margin_bottom = 1.0
+
+[node name="UISegment" type="Control" node_paths=PackedStringArray("menu_section_main", "menu_section_settings", "menu_section_leaderboard", "menu_label")]
 z_index = -1
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -106.99997
+offset_top = -75.399994
+offset_right = -107.0
+offset_bottom = -75.400024
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_hcmuh")
+menu_section_main = NodePath("CanvasLayer/Main/MainWindow")
+menu_section_settings = NodePath("CanvasLayer/Settings")
+menu_section_leaderboard = NodePath("CanvasLayer/Leaderboard/LeaderboardWindow")
+menu_label = NodePath("CanvasLayer/Menu/MenuWindow/Label")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(1.2, 1.2)
+transform = Transform2D(1.2, 0, 0, 1.2, 0, 0)
 
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -650.0
-offset_top = -397.5
-offset_right = 650.0
-offset_bottom = 397.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-texture = ExtResource("1_8shnc")
+[node name="Background" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(545, 301.6667)
+scale = Vector2(2.3, 2.278)
+sprite_frames = SubResource("SpriteFrames_n1c7k")
+animation = &"idle_2"
+frame = 9
+frame_progress = 1.0
+script = ExtResource("6_2j6l0")
 
-[node name="MenuWindow" type="TextureRect" parent="CanvasLayer"]
-offset_left = 377.0
-offset_top = 200.0
-offset_right = 497.0
-offset_bottom = 344.0
-scale = Vector2(2, 2)
-texture = ExtResource("2_hcmuh")
+[node name="Settings" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -89.16664
+offset_top = -62.833313
+offset_right = -49.16664
+offset_bottom = -22.833313
+script = ExtResource("7_ntfnx")
+bus_name_music = "Music"
+bus_name_audio = "Audio"
 
-[node name="Quickplay" type="Button" parent="CanvasLayer/MenuWindow"]
+[node name="SettingsWindow" type="TextureRect" parent="CanvasLayer/Settings"]
 layout_mode = 0
-offset_left = 8.5
+offset_left = 679.0
+offset_top = 318.0
+offset_right = 807.0
+offset_bottom = 414.0
+scale = Vector2(2, 2)
+texture = ExtResource("9_r3l1u")
+
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/Settings/SettingsWindow"]
+layout_mode = 0
+offset_left = 18.0
 offset_top = 25.5
-offset_right = 112.5
-offset_bottom = 56.5
-theme_override_fonts/font = ExtResource("4_4ls13")
-theme_override_font_sizes/font_size = 10
-text = "ИГРАТЬ"
-icon = ExtResource("3_4ls13")
-flat = true
-autowrap_trim_flags = 0
-icon_alignment = 1
+offset_right = 112.0
+offset_bottom = 41.5
+theme_override_icons/grabber = ExtResource("11_1lec1")
+theme_override_icons/grabber_highlight = ExtResource("11_1lec1")
+theme_override_styles/slider = SubResource("StyleBoxTexture_r3l1u")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_r3l1u")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_1lec1")
+step = 3.0
 
-[node name="Settings" type="Button" parent="CanvasLayer/MenuWindow"]
+[node name="AudioSlider" type="HSlider" parent="CanvasLayer/Settings/SettingsWindow"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 52.5
-offset_right = 113.0
-offset_bottom = 83.5
-theme_override_fonts/font = ExtResource("4_4ls13")
-theme_override_font_sizes/font_size = 10
-theme_override_icons/icon = ExtResource("3_4ls13")
-action_mode = 0
-text = "НАСТРОЙКИ"
-icon = ExtResource("3_4ls13")
-flat = true
-autowrap_trim_flags = 0
-icon_alignment = 1
+offset_left = 18.0
+offset_top = 60.5
+offset_right = 112.0
+offset_bottom = 76.5
+theme_override_icons/grabber = ExtResource("11_1lec1")
+theme_override_icons/grabber_highlight = ExtResource("11_1lec1")
+theme_override_styles/slider = SubResource("StyleBoxTexture_r3l1u")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_r3l1u")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_1lec1")
+step = 3.0
 
-[node name="Leaderboard" type="Button" parent="CanvasLayer/MenuWindow"]
+[node name="Leaderboard" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("places")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -89.16664
+offset_top = -62.833313
+offset_right = -49.16664
+offset_bottom = -22.833313
+script = ExtResource("11_0nvf4")
+places = [NodePath("LeaderboardWindow/Place1/Label1"), NodePath("LeaderboardWindow/Place2/Label2"), NodePath("LeaderboardWindow/Place3/Label3"), NodePath("LeaderboardWindow/Place4/Label4"), NodePath("LeaderboardWindow/Place5/Label5"), NodePath("LeaderboardWindow/Place6/Label6")]
+
+[node name="LeaderboardWindow" type="TextureRect" parent="CanvasLayer/Leaderboard"]
 layout_mode = 0
-offset_left = 8.5
-offset_top = 81.0
-offset_right = 112.5
-offset_bottom = 112.0
-theme_override_fonts/font = ExtResource("4_4ls13")
-theme_override_font_sizes/font_size = 10
-text = "ЛИДЕРЫ"
-icon = ExtResource("3_4ls13")
-flat = true
-autowrap_trim_flags = 0
-icon_alignment = 1
-
-[node name="Back" type="Button" parent="CanvasLayer/MenuWindow"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 109.0
-offset_right = 113.0
-offset_bottom = 140.0
-theme_override_fonts/font = ExtResource("4_4ls13")
-theme_override_font_sizes/font_size = 10
-text = "НАЗАД"
-icon = ExtResource("3_4ls13")
-flat = true
-autowrap_trim_flags = 0
-icon_alignment = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/MenuWindow"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 7.0
-offset_right = 81.0
-offset_bottom = 30.0
-theme_override_fonts/font = ExtResource("4_4ls13")
-theme_override_font_sizes/font_size = 10
-text = "ГЛАВНОЕ МЕНЮ"
-
-[node name="SectionSettings" type="TextureRect" parent="CanvasLayer"]
-offset_left = 637.0
-offset_top = 297.0
-offset_right = 765.0
-offset_bottom = 393.0
-scale = Vector2(2, 2)
-texture = ExtResource("4_un2e4")
-
-[node name="SectionMain" type="TextureRect" parent="CanvasLayer"]
-z_index = 1
-offset_left = 637.0
-offset_top = 130.0
-offset_right = 745.0
-offset_bottom = 309.0
-scale = Vector2(2, 2)
-texture = ExtResource("5_pd731")
-
-[node name="SectionLeaderboard" type="TextureRect" parent="CanvasLayer"]
-offset_left = 637.0
-offset_top = 152.0
-offset_right = 765.0
-offset_bottom = 320.0
+offset_left = 679.0
+offset_top = 173.0
+offset_right = 807.0
+offset_bottom = 341.0
 scale = Vector2(2, 2)
 texture = ExtResource("6_ynag5")
 stretch_mode = 3
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SectionLeaderboard"]
+[node name="Place1" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -2.5
@@ -152,7 +335,17 @@ offset_bottom = 37.5
 texture = ExtResource("7_eaahh")
 stretch_mode = 3
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/SectionLeaderboard"]
+[node name="Label1" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place1"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 31.5
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place2" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 24.0
@@ -161,7 +354,17 @@ offset_bottom = 64.0
 texture = ExtResource("7_eaahh")
 stretch_mode = 3
 
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/SectionLeaderboard"]
+[node name="Label2" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place3" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 50.0
@@ -170,7 +373,17 @@ offset_bottom = 90.0
 texture = ExtResource("7_eaahh")
 stretch_mode = 3
 
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/SectionLeaderboard"]
+[node name="Label3" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place3"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place4" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 76.0
@@ -179,7 +392,17 @@ offset_bottom = 116.0
 texture = ExtResource("7_eaahh")
 stretch_mode = 3
 
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/SectionLeaderboard"]
+[node name="Label4" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place4"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place5" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 102.0
@@ -188,7 +411,17 @@ offset_bottom = 142.0
 texture = ExtResource("7_eaahh")
 stretch_mode = 3
 
-[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/SectionLeaderboard"]
+[node name="Label5" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place5"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place6" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 128.0
@@ -197,7 +430,145 @@ offset_bottom = 168.0
 texture = ExtResource("7_eaahh")
 stretch_mode = 3
 
-[connection signal="pressed" from="CanvasLayer/MenuWindow/Quickplay" to="." method="_on_quickplay_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuWindow/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuWindow/Leaderboard" to="." method="_on_leaderboard_pressed"]
-[connection signal="pressed" from="CanvasLayer/MenuWindow/Back" to="." method="_on_back_pressed"]
+[node name="Label6" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place6"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Menu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -89.16664
+offset_top = -62.833313
+offset_right = -49.16664
+offset_bottom = -22.833313
+
+[node name="MenuWindow" type="TextureRect" parent="CanvasLayer/Menu"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 221.0
+offset_right = 539.0
+offset_bottom = 365.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_hcmuh")
+
+[node name="Quickplay" type="TextureButton" parent="CanvasLayer/Menu/MenuWindow"]
+z_index = 1
+layout_mode = 0
+offset_left = 13.0
+offset_top = 29.0
+offset_right = 109.0
+offset_bottom = 51.0
+texture_normal = ExtResource("3_4ls13")
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow/Quickplay"]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 96.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "ИГРАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Settings" type="TextureButton" parent="CanvasLayer/Menu/MenuWindow"]
+layout_mode = 0
+offset_left = 12.5
+offset_top = 56.5
+offset_right = 108.5
+offset_bottom = 78.5
+action_mode = 0
+texture_normal = ExtResource("3_4ls13")
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow/Settings"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = -5.5
+offset_right = 96.5
+offset_bottom = 17.5
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "НАСТРОЙКИ"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Leaderboard" type="TextureButton" parent="CanvasLayer/Menu/MenuWindow"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 85.5
+offset_right = 109.0
+offset_bottom = 107.5
+texture_normal = ExtResource("3_4ls13")
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow/Leaderboard"]
+layout_mode = 0
+offset_top = -5.5
+offset_right = 96.0
+offset_bottom = 17.5
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "ЛИДЕРЫ"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Back" type="TextureButton" parent="CanvasLayer/Menu/MenuWindow"]
+layout_mode = 0
+offset_left = 12.5
+offset_top = 113.5
+offset_right = 108.5
+offset_bottom = 135.5
+texture_normal = ExtResource("3_4ls13")
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow/Back"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = -5.5
+offset_right = 96.5
+offset_bottom = 17.5
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "НАЗАД"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "ГЛАВНОЕ МЕНЮ"
+
+[node name="Main" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -89.16664
+offset_top = -62.833313
+offset_right = -49.16664
+offset_bottom = -22.833313
+
+[node name="MainWindow" type="TextureRect" parent="CanvasLayer/Main"]
+z_index = 1
+layout_mode = 0
+offset_left = 679.0
+offset_top = 151.0
+offset_right = 787.0
+offset_bottom = 330.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_pd731")
+
+[connection signal="animation_finished" from="CanvasLayer/Background" to="CanvasLayer/Background" method="_on_animation_finished"]
+[connection signal="value_changed" from="CanvasLayer/Settings/SettingsWindow/MusicSlider" to="CanvasLayer/Settings" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Settings/SettingsWindow/AudioSlider" to="CanvasLayer/Settings" method="_on_audio_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Quickplay" to="." method="_on_quickplay_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Back" to="." method="_on_back_pressed"]

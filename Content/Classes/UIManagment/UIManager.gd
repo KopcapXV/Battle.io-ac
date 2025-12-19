@@ -14,15 +14,21 @@ var menus : Dictionary = { }
 var menu_current : Control = null
 # -- State of the Label
 var label_current : Node = null
+# -- Export variables for Menu UI Control nodes 
+@export var menu_section_main 		 : Control
+@export var menu_section_settings 	 : Control
+@export var menu_section_leaderboard : Control
+@export var menu_label 				 : Control
 
 
 func _ready () -> void:
 	# Switch off all sections
-	Register_menu("MAIN", $CanvasLayer/SectionMain)
-	Register_menu("SETTINGS", $CanvasLayer/SectionSettings)
-	Register_menu("LEADERBOARD", $CanvasLayer/SectionLeaderboard)
-	label_current = $CanvasLayer/MenuWindow/Label
-	label_current.text = "ГЛАВНОЕ МЕНЮ"
+	Register_menu("MAIN", 		 menu_section_main)
+	Register_menu("SETTINGS", 	 menu_section_settings)
+	Register_menu("LEADERBOARD", menu_section_leaderboard) 
+	
+	menu_label.text = "ГЛАВНОЕ МЕНЮ"
+	
 	for menu in menus.values():
 		menu.visible = false
 	Show_menu("MAIN")
@@ -53,12 +59,12 @@ func _on_quickplay_pressed():
 # --- Handler of settings button
 func _on_settings_pressed():
 	Show_menu("SETTINGS")
-	label_current.text = "НАСТРОЙКИ"
+	menu_label.text = "НАСТРОЙКИ"
 # --- Handler of leaderboard button
 func _on_leaderboard_pressed():
 	Show_menu("LEADERBOARD")
-	label_current.text = "ЛИДЕРЫ"
+	menu_label.text = "ЛИДЕРЫ"
 # --- Handler of back button
 func _on_back_pressed():
 	Show_menu("MAIN")
-	label_current.text = "ГЛАВНОЕ МЕНЮ"
+	menu_label.text = "ГЛАВНОЕ МЕНЮ"
