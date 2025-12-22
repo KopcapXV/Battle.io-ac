@@ -1,10 +1,6 @@
-extends State
+extends StateMove
 
-class_name StateMove
-
-
-var _last_direction : Vector2
-var direction : Vector2
+class_name StateArtificialMove
 
 # / Enter state function /
 # Use: Put extra conditions and dependencies
@@ -33,17 +29,6 @@ func Update (_delta):
 # / Physics update function /
 # Use: Updation of the physical parameters  of the player
 func Physics_update (_delta):
-	direction = Input.get_vector("left", "right", "up", "down")
-	if direction != _last_direction: 
-		_last_direction = direction
-		
-		var packed_direction : PackedByteArray = [0]
-		if direction.x > 0: packed_direction[0] = 128
-		if direction.x < 0: packed_direction[0] |= 32
-		if direction.y > 0: packed_direction[0] |= 8
-		if direction.y < 0: packed_direction[0] |= 2
-		print("<Player> : packed direction is ", packed_direction)
-		WEBSOCKET.send_byte_binary_data(WEBSOCKET.SEND_COMMAND.PLAYER_DIRECTION, packed_direction)
 	if (direction == Vector2.ZERO):
 		its_state_machine.Change_state("stateidle")
 		return

@@ -15,6 +15,13 @@ run/main_scene="uid://ceenn2qent2x1"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ENUMS="*res://Content/Classes/Global/enums.gd"
+GAME_DATA="*res://Content/Classes/Global/game_data.gd"
+SERVER="*res://Content/Classes/Global/server.gd"
+WEBSOCKET="*res://Content/Classes/Global/websocket.gd"
+
 [display]
 
 window/size/viewport_width=1280

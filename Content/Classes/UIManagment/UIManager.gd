@@ -43,7 +43,7 @@ func Register_menu (menu_key : String, menu_node : Control) -> void:
 func Show_menu (menu_key : String) -> void:
 	# - Check existence of the section
 	if (not menus.has(menu_key)):
-		push_warning("Unkown menu: %s" % menu_key)
+		push_warning("<UIManager> : Unkown menu %s" % menu_key)
 		return
 	# - Switch menus 
 	if (menu_current):

@@ -16,8 +16,8 @@ func _ready () -> void:
 
 func _on_music_slider_value_changed(value : int):
 	AudioServer.set_bus_volume_db(bus_index_music, value)
-	print("music")
+	print("<Settigs manager> : music changed")
 
 func _on_audio_slider_value_changed(value : int):
 	AudioServer.set_bus_volume_db(bus_index_audio, value)
-	print("audio")
+	print("<Settings manager> : audio")

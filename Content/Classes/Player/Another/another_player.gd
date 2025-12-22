@@ -1,27 +1,13 @@
-extends CharacterBody2D
+extends Player
 
-class_name Player
-
-signal _on_health_changed	(new_value)
-signal _on_mana_changed		(new_value)
-signal _on_ability_used		(cooldown_time)
-signal _on_player_died		()
-
-var for_animation_object 
-
-var for_collision_object 
-
-var stat_speed 	: float = 150
-
-var stat_health : float = 100
-
-var stat_mana 	: float = 100
-
-var current_health : float 
-
-var current_mana : float
+class_name AnotherPlayer
 
 func _ready ():
+	var state_machine : Node = preload("uid://cex6e23a5xqun").instantiate()
+	add_child(state_machine)
+	
+	state_move = get_node("StateMachine/StateMove") 
+	
 	for_animation_object = $AnimatedSprite2D
 	for_collision_object = $CollisionShape2D
 	current_health = stat_health
