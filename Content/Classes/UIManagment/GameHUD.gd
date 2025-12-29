@@ -16,7 +16,7 @@ func _ready () -> void:
 	ability_cooldown.value = 0
 
 # --- Function for initializaing HUD's health bar
-func Init_bars (
+func Initialize_HUD (
 	stat_health 	: float, 
 	current_health 	: float,
 	stat_mana 		: float,

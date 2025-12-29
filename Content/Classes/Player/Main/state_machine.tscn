@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://18clg5181kcm"]
 
-[ext_resource type="Script" uid="uid://d1jmhfboxpv47" path="res://Content/Classes/StateMachine/StateMachine.gd" id="1_42p7a"]
+[ext_resource type="Script" uid="uid://d1jmhfboxpv47" path="res://Content/Classes/UIManagment/StateMachine.gd" id="1_42p7a"]
 [ext_resource type="Script" uid="uid://b2f0vn38ikt0m" path="res://Content/Classes/StateMachine/StateIdle.gd" id="2_wbqt1"]
 [ext_resource type="Script" uid="uid://cq6ch2433m4hb" path="res://Content/Classes/StateMachine/StateMove.gd" id="3_qd8t8"]
 [ext_resource type="Script" uid="uid://dwoqbcva10hhy" path="res://Content/Classes/StateMachine/StateDashAttack.gd" id="4_pmotb"]

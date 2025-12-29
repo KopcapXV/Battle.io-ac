@@ -1,7 +1,7 @@
 [gd_scene load_steps=41 format=3 uid="uid://4d6xpcythvwe"]
 
 [ext_resource type="Texture2D" uid="uid://bqdnotaxv1yl6" path="res://Content/Assets/Testable/quiet_animation_idle_spritesheet.png" id="1_1iada"]
-[ext_resource type="Script" uid="uid://ckgh8wu0ivy8" path="res://Content/Classes/Player/Main/Player.gd" id="1_io258"]
+[ext_resource type="Script" uid="uid://ckgh8wu0ivy8" path="res://Content/Classes/Player/Main/Player.gd" id="1_yfmp8"]
 [ext_resource type="Texture2D" uid="uid://o64ujjxyjc3t" path="res://Content/Assets/Testable/quiet_animation_move_spritesheet.png" id="2_0gd87"]
 [ext_resource type="Texture2D" uid="uid://c464418ppws56" path="res://Content/Assets/Testable/quiet_animation_attack_spritesheet.png" id="2_c7jvw"]
 
@@ -265,8 +265,10 @@ animations = [{
 "speed": 11.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_io258")
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("for_animation_object", "for_collision_object")]
+script = ExtResource("1_yfmp8")
+for_animation_object = NodePath("AnimatedSprite2D")
+for_collision_object = NodePath("CollisionShape2D")
 metadata/_custom_type_script = "uid://ckgh8wu0ivy8"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
