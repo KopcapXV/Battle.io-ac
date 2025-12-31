@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xd64n2vxr6tt"
-path="res://.godot/imported/quiet_sprite.png-97f55f681ac395c3a89939201e3a7836.ctex"
+uid="uid://dxao7nchyhovn"
+path="res://.godot/imported/quiet_animation_attack_spritesheet.png-c9c4f4213761123e35fc2840cb199fb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Assets/Characters/quiet_sprite.png"
-dest_files=["res://.godot/imported/quiet_sprite.png-97f55f681ac395c3a89939201e3a7836.ctex"]
+source_file="res://Content/Assets/Characters/Assasins/Quiet/quiet_animation_attack_spritesheet.png"
+dest_files=["res://.godot/imported/quiet_animation_attack_spritesheet.png-c9c4f4213761123e35fc2840cb199fb4.ctex"]
 
 [params]
 

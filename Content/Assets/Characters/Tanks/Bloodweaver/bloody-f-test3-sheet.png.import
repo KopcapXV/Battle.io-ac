@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxao7nchyhovn"
-path="res://.godot/imported/quiet_animation_attack_spritesheet.png-72a34f58906d734660cb3749e29a8d34.ctex"
+uid="uid://dmwhol0c5js4q"
+path="res://.godot/imported/bloody-f-test3-sheet.png-a6ebbc9681a499aa2786878c61e02820.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Assets/Characters/quiet_animation_attack_spritesheet.png"
-dest_files=["res://.godot/imported/quiet_animation_attack_spritesheet.png-72a34f58906d734660cb3749e29a8d34.ctex"]
+source_file="res://Content/Assets/Characters/Tanks/Bloodweaver/bloody-f-test3-sheet.png"
+dest_files=["res://.godot/imported/bloody-f-test3-sheet.png-a6ebbc9681a499aa2786878c61e02820.ctex"]
 
 [params]
 

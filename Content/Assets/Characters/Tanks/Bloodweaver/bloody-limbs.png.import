@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsjlmb32pgcea"
-path="res://.godot/imported/quiet_animation_idle_spritesheet.png-164e36bcd29f3db76cd7a62be7aa500c.ctex"
+uid="uid://b1lg12c0ccdby"
+path="res://.godot/imported/bloody-limbs.png-80a71a580821ce319e4d4d1b227c015a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Assets/Characters/quiet_animation_idle_spritesheet.png"
-dest_files=["res://.godot/imported/quiet_animation_idle_spritesheet.png-164e36bcd29f3db76cd7a62be7aa500c.ctex"]
+source_file="res://Content/Assets/Characters/Tanks/Bloodweaver/bloody-limbs.png"
+dest_files=["res://.godot/imported/bloody-limbs.png-80a71a580821ce319e4d4d1b227c015a.ctex"]
 
 [params]
 

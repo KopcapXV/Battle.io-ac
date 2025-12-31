@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf2lameyawytx"
-path="res://.godot/imported/quiet_animation_move_spritesheet.png-c901972ecbdf3912d6f00fb5a1668464.ctex"
+path="res://.godot/imported/quiet_animation_move_spritesheet.png-77b5571ecfed9c41f183d9cd281c2773.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Content/Assets/Characters/quiet_animation_move_spritesheet.png"
-dest_files=["res://.godot/imported/quiet_animation_move_spritesheet.png-c901972ecbdf3912d6f00fb5a1668464.ctex"]
+source_file="res://Content/Assets/Characters/Assasins/Quiet/quiet_animation_move_spritesheet.png"
+dest_files=["res://.godot/imported/quiet_animation_move_spritesheet.png-77b5571ecfed9c41f183d9cd281c2773.ctex"]
 
 [params]
 
