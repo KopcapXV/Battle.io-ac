@@ -7,14 +7,14 @@ signal ConnectToServerFailed
 signal ConnectionClosed(code : int)
 
 
-# Maximum - 256 commans
+# Maximum 256 commands
 enum SEND_COMMAND{
 	NONE,
 	VECTOR2,
 	PLAYER_DIRECTION
 }
 
-# Maximum - 256 commans
+# Maximum 256 commands
 enum RECEIVE_COMMAND{
 	NONE,
 	ENTITY_POSITION,
@@ -22,10 +22,8 @@ enum RECEIVE_COMMAND{
 	PLAYER_DIRECTION
 }
 
-const FLOAT_ACCURACY = 1000 # Float divider
-const REMOTE_HOST = "ws://127.0.0.1"
-var remote_ws_port = "9080"
-
+const FLOAT_ACCURACY = 1000
+const WS_PREFIX = "ws://"
 
 var mutex_socket : Mutex = Mutex.new()
 var socket : WebSocketPeer
@@ -52,15 +50,17 @@ var room_key : int = 0:
 			room_key_in_byte_array[2] = ((room_key >> 8) & 0xFF)
 			room_key_in_byte_array[3] = (room_key & 0xFF)
 			
+# Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
-	SERVER.SessionAccepted.connect(_start)
+	CLIENT.SessionAccepted.connect(_start)
 
-func _start():
-	player_id = SERVER.playerId
-	room_key = SERVER.roomKey
-	socket = await _connect_url(REMOTE_HOST + ":" + remote_ws_port)
+func _start(URL : String, port : int):
+	player_id = CLIENT.playerId
+	room_key = CLIENT.roomKey
+	socket = await _connect_url(WS_PREFIX + URL + ":" + str(port))
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	mutex_socket.lock()
 	if (socket != null):
@@ -78,18 +78,22 @@ func _process(delta: float) -> void:
 					pass
 	mutex_socket.unlock()
 
+
 func send_binary_data(command : SEND_COMMAND, data : PackedInt32Array):
 	mutex_socket.lock()
-	if socket != null and SERVER.session_accepted:
+	if socket != null and CLIENT.session_accepted:
 		socket.poll()
 		match socket.get_ready_state():
 			WebSocketPeer.STATE_OPEN:
 				var bytes : PackedByteArray = []
+				# Пакуем заголовок
 				bytes.append_array(player_id_in_byte_array)
 				#print("<Websocket> : playerID in bytes is ", bytes)
 				bytes.append_array(room_key_in_byte_array)
 				#print("<Websocket> : playerID ands roomKey in bytes is ", bytes)
 				bytes.push_back(command & 0xFF)
+				
+				# Пакуем данные
 				
 				for num in data:
 					bytes.append_array(_int32_to_bytes(num))
@@ -108,11 +112,12 @@ func send_binary_data(command : SEND_COMMAND, data : PackedInt32Array):
 	
 func send_byte_binary_data(command : SEND_COMMAND, data : PackedByteArray):
 	mutex_socket.lock()
-	if socket != null and SERVER.session_accepted:
+	if socket != null and CLIENT.session_accepted:
 		socket.poll()
 		match socket.get_ready_state():
 			WebSocketPeer.STATE_OPEN:
 				var bytes : PackedByteArray = []
+				# Пакуем заголовок
 				bytes.append_array(player_id_in_byte_array)
 				#print("<Websocket> : playerID in bytes is ", bytes)
 				bytes.append_array(room_key_in_byte_array)
@@ -144,7 +149,7 @@ func _connect_url(url : String) -> WebSocketPeer:
 			await get_tree().create_timer(0.5).timeout
 			current_socket.poll()
 			print("<Websocket> : connecting with state ", current_socket.get_ready_state())
-		
+		print("<Websocket> : connected on address ", current_socket.get_connected_host(), " and port ", current_socket.get_connected_port())
 		# packed and send auth bytes
 		var bytes : PackedByteArray = []
 		bytes.append_array(player_id_in_byte_array)

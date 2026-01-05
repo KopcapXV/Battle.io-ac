@@ -5,6 +5,8 @@ var update_players_direction_timer : Timer
 
 const SYNC_SPEED : float = 4.0
 
+@export var game_hud : Node
+
 func _ready() -> void:
 	update_players_direction_timer = Timer.new()
 	update_players_direction_timer.one_shot = false
@@ -20,18 +22,19 @@ func _process(delta: float) -> void:
 		if !GAME_DATA.players.has(player_index): 
 			#print("<Players Manager> : skip set direction, hasn't player index: ", player_index)
 			continue
-		if player_index == SERVER.globalId: 
-			#print("<Players Manager> : player_index == SERVER.globalId, player_index is ", player_index, " and globalId is ", SERVER.globalId)
+		if player_index == CLIENT.globalId: 
+			#print("<Players Manager> : player_index == CLIENT.globalId, player_index is ", player_index, " and globalId is ", CLIENT.globalId)
 			continue
+		
 		if GAME_DATA.players[player_index].state_move.direction != GAME_DATA.players_direction[player_index]:
 			GAME_DATA.players[player_index].state_move.direction = GAME_DATA.players_direction[player_index]
-			#print("<Global ID> : ",SERVER.globalId, " <Players Manager> : update player ", player_index, " direction on ", GAME_DATA.players_direction)
+			#print("<Global ID> : ",CLIENT.globalId, " <Players Manager> : update player ", player_index, " direction on ", GAME_DATA.players_direction)
 	GAME_DATA.mutexPlayersDirection.unlock()
 	
 	GAME_DATA.mutexPlayersPosition.lock()
 	for player_index : int in GAME_DATA.players_position.keys():
 		if !GAME_DATA.players.has(player_index):
-			GAME_DATA.players[player_index] = create_player(!(SERVER.globalId == player_index), player_index)
+			GAME_DATA.players[player_index] = create_player(!(CLIENT.globalId == player_index), player_index)
 			#print("<Players Manager> : added player with id ", player_index)
 			
 		GAME_DATA.players[player_index].global_position = lerp(GAME_DATA.players[player_index].global_position, GAME_DATA.players_position[player_index], delta * SYNC_SPEED)
@@ -48,8 +51,15 @@ func create_player(another : bool, global_id : int) -> Player:
 	if player is AnotherPlayer: print("<Players Manager> : created another player")
 	else: print("<Players Manager> : created just player with id ", global_id)
 	add_child(player)
+	connect_HUD_to_player(player)
 	player.id = global_id
 	return player
 
 func _update_players_position():
 	pass
+	
+func connect_HUD_to_player (player : Player) -> void:
+	if (player is not AnotherPlayer):
+		game_hud.Initialize_HUD(player.stat_health, player.current_health, player.stat_mana, player.current_mana)
+		player._on_health_changed.connect(game_hud.Update_health_bar)
+		player._on_ability_used.connect(game_hud.Start_cooldown)
