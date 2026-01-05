@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cex6e23a5xqun"]
+
+[ext_resource type="Script" uid="uid://d1jmhfboxpv47" path="res://Content/Classes/UIManagment/StateMachine.gd" id="1_1pt3b"]
+[ext_resource type="Script" uid="uid://bfkwg50k4edwa" path="res://Content/Classes/StateMachine/StateArtificialMove.gd" id="2_048eo"]
+
+[node name="StateMachine" type="Node" node_paths=PackedStringArray("initial_state")]
+script = ExtResource("1_1pt3b")
+initial_state = NodePath("StateMove")
+metadata/_custom_type_script = "uid://d1jmhfboxpv47"
+
+[node name="StateMove" type="Node" parent="."]
+script = ExtResource("2_048eo")
+metadata/_custom_type_script = "uid://bfkwg50k4edwa"
