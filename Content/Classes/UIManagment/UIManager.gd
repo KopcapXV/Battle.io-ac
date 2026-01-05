@@ -63,18 +63,18 @@ func Show_menu (menu_key : String) -> void:
 # --- Handler of quickplay button
 func _on_quickplay_pressed():
 	get_tree().change_scene_to_file("res://Content/Scenes/TestScene.tscn")
+	
 # --- Handler of settings button
-
 func _on_settings_pressed():
 	Show_menu("SETTINGS")
 	menu_label.text = "НАСТРОЙКИ"
+	
 # --- Handler of leaderboard button
-
 func _on_leaderboard_pressed():
 	Show_menu("LEADERBOARD")
 	menu_label.text = "ЛИДЕРЫ"
+	
 # --- Handler of back button
-
 func _on_back_pressed():
 	Show_menu("MAIN")
 	menu_label.text = "ГЛАВНОЕ МЕНЮ"

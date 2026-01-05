@@ -7,8 +7,6 @@ class_name Notifier
 
 func _ready () -> void:
 	self.visible = false
-	if notification_animator:
-		notification_animator.animation_finished.connect(_on_animation_player_animation_finished)
 		
 
 func _input(event) -> void:
@@ -27,6 +25,7 @@ func Show_notifier () ->  void:
 	
 	await get_tree().create_timer(3.0).timeout
 	Hide_notifier()
+	
 	
 func Hide_notifier () -> void:
 	notification_animator.play("hide")

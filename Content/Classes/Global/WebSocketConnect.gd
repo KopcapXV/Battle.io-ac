@@ -7,14 +7,14 @@ signal ConnectToServerFailed
 signal ConnectionClosed(code : int)
 
 
-#Максимум 256 команд
+# Maximum 256 commands
 enum SEND_COMMAND{
 	NONE,
 	VECTOR2,
 	PLAYER_DIRECTION
 }
 
-#Максимум 256 команд
+# Maximum 256 commands
 enum RECEIVE_COMMAND{
 	NONE,
 	ENTITY_POSITION,
@@ -22,7 +22,7 @@ enum RECEIVE_COMMAND{
 	PLAYER_DIRECTION
 }
 
-const FLOAT_ACCURACY = 1000 # насколько сильно резать float при передаче данных
+const FLOAT_ACCURACY = 1000
 const WS_PREFIX = "ws://"
 
 var mutex_socket : Mutex = Mutex.new()
@@ -78,7 +78,7 @@ func _process(delta: float) -> void:
 					pass
 	mutex_socket.unlock()
 
-# Чтобы выслать тот же float - распарсить его на целую и дробную часть и вписать в массив. В cзависимости от команды он будет упакован
+
 func send_binary_data(command : SEND_COMMAND, data : PackedInt32Array):
 	mutex_socket.lock()
 	if socket != null and CLIENT.session_accepted:

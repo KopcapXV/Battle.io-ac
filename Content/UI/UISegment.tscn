@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bk2sw51iswc8e"]
+[gd_scene load_steps=57 format=3 uid="uid://bk2sw51iswc8e"]
 
 [ext_resource type="Script" uid="uid://41wepuuba76j" path="res://Content/Classes/UIManagment/UIManager.gd" id="1_hcmuh"]
 [ext_resource type="Texture2D" uid="uid://5ks2st5d7ri2" path="res://Content/Assets/UI/Background/Background.png" id="2_4t6kl"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c8stfa8uvha08" path="res://Content/Assets/UI/Button_focused.png" id="18_evxs1"]
 [ext_resource type="Texture2D" uid="uid://dlkpfnabdur27" path="res://Content/Assets/UI/notifier.png" id="21_4855k"]
 [ext_resource type="Script" uid="uid://b6kothl3ilq1s" path="res://Content/Classes/UIManagment/Notifier.gd" id="21_cnhaw"]
+[ext_resource type="Script" uid="uid://dqmyjfy7haneo" path="res://Content/Classes/UIManagment/ChatManager.gd" id="23_2jnq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kiu1e"]
 atlas = ExtResource("2_4t6kl")
@@ -678,6 +679,33 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_6vdgs")
 }
+
+[node name="Chat" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("input_field", "chat_table")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("23_2jnq7")
+input_field = NodePath("LineEdit")
+chat_table = NodePath("TextEdit")
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Chat"]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 335.0
+offset_right = 1100.0
+offset_bottom = 435.0
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Chat"]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 442.5
+offset_right = 1100.0
+offset_bottom = 473.5
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
 
 [connection signal="animation_finished" from="CanvasLayer/Background" to="CanvasLayer/Background" method="_on_animation_finished"]
 [connection signal="value_changed" from="CanvasLayer/Settings/SettingsWindow/MusicSlider" to="CanvasLayer/Settings" method="_on_music_slider_value_changed"]
