@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bk2sw51iswc8e"]
+[gd_scene load_steps=57 format=3 uid="uid://bk2sw51iswc8e"]
 
 [ext_resource type="Script" uid="uid://41wepuuba76j" path="res://Content/Classes/UIManagment/UIManager.gd" id="1_hcmuh"]
 [ext_resource type="Texture2D" uid="uid://5ks2st5d7ri2" path="res://Content/Assets/UI/Background/Background.png" id="2_4t6kl"]
@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://dlkpfnabdur27" path="res://Content/Assets/UI/notifier.png" id="21_4855k"]
 [ext_resource type="Script" uid="uid://b6kothl3ilq1s" path="res://Content/Classes/UIManagment/Notifier.gd" id="21_cnhaw"]
 [ext_resource type="Script" uid="uid://dqmyjfy7haneo" path="res://Content/Classes/UIManagment/ChatManager.gd" id="23_2jnq7"]
-[ext_resource type="Texture2D" uid="uid://dykj3tbpusokn" path="res://Content/Assets/UI/chat_toggler.png" id="24_i2bqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kiu1e"]
 atlas = ExtResource("2_4t6kl")
@@ -286,340 +285,6 @@ _data = {
 &"show": SubResource("Animation_cnhaw")
 }
 
-[sub_resource type="Animation" id="Animation_b64ag"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChatToggler:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(535, 569.167)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ChatTable:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(375, 600.8331)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ChatLine:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(385, 702.4997)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Settings:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-89.1666, -62.8333)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Leaderboard:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-89.1666, -62.8333)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Menu:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-89.1666, -62.8333)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Main:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-89.1666, -62.8333)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("ChatToggler:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_drfiy"]
-resource_name = "collapse"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChatToggler:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(535, 433.333), Vector2(535, 489.167), Vector2(535, 570)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ChatTable:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(375, 464.99985), Vector2(375, 520.83325), Vector2(375, 601.6668)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ChatLine:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(385, 566.6665), Vector2(385, 622.4999), Vector2(385, 703.3334)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Settings:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Leaderboard:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Menu:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Main:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
-}
-
-[sub_resource type="Animation" id="Animation_6vdgs"]
-resource_name = "expand"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChatToggler:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(535, 569.167), Vector2(535, 530.833), Vector2(535, 433.333)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ChatTable:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(375, 600.8331), Vector2(375, 562.4998), Vector2(375, 464.99985)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ChatLine:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(385, 702.4997), Vector2(385, 664.1664), Vector2(385, 566.6665)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Settings:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Leaderboard:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Menu:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Main:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ovcgw"]
-_data = {
-&"RESET": SubResource("Animation_b64ag"),
-&"chat_collapse": SubResource("Animation_drfiy"),
-&"chat_expand": SubResource("Animation_6vdgs")
-}
-
-[sub_resource type="Animation" id="Animation_k3qy0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChatToggler:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_ovcgw"]
-resource_name = "button_hover"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChatToggler:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
-}
-
-[sub_resource type="Animation" id="Animation_eq4af"]
-resource_name = "button_unhover"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ChatToggler:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkwvo"]
-_data = {
-&"RESET": SubResource("Animation_k3qy0"),
-&"button_hover": SubResource("Animation_ovcgw"),
-&"button_unhover": SubResource("Animation_eq4af")
-}
-
 [node name="UISegment" type="Control" node_paths=PackedStringArray("menu_section_main", "menu_section_settings", "menu_section_leaderboard", "menu_label", "animator_main", "animator_settings", "animator_leaderboard")]
 z_index = -1
 texture_filter = 1
@@ -662,7 +327,7 @@ anchors_preset = 0
 offset_left = -89.1666
 offset_top = -62.8333
 offset_right = -49.1666
-offset_bottom = -22.833302
+offset_bottom = -22.8333
 script = ExtResource("7_ntfnx")
 bus_name_music = "Music"
 bus_name_audio = "Audio"
@@ -712,7 +377,7 @@ anchors_preset = 0
 offset_left = -89.1666
 offset_top = -62.8333
 offset_right = -49.1666
-offset_bottom = -22.833302
+offset_bottom = -22.8333
 script = ExtResource("11_0nvf4")
 places = [NodePath("LeaderboardWindow/Place1/Label1"), NodePath("LeaderboardWindow/Place2/Label2"), NodePath("LeaderboardWindow/Place3/Label3"), NodePath("LeaderboardWindow/Place4/Label4"), NodePath("LeaderboardWindow/Place5/Label5"), NodePath("LeaderboardWindow/Place6/Label6")]
 
@@ -848,7 +513,7 @@ anchors_preset = 0
 offset_left = -89.1666
 offset_top = -62.8333
 offset_right = -49.1666
-offset_bottom = -22.833302
+offset_bottom = -22.8333
 
 [node name="MenuWindow" type="TextureRect" parent="CanvasLayer/Menu"]
 layout_mode = 0
@@ -963,7 +628,7 @@ anchors_preset = 0
 offset_left = -89.1666
 offset_top = -62.8333
 offset_right = -49.1666
-offset_bottom = -22.833302
+offset_bottom = -22.8333
 
 [node name="MainWindow" type="TextureRect" parent="CanvasLayer/Main"]
 z_index = 1
@@ -1015,61 +680,34 @@ libraries = {
 &"": SubResource("AnimationLibrary_6vdgs")
 }
 
-[node name="Chat" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("chat_field", "chat_table", "chat_animator", "toggler_animator", "chat_toggler")]
+[node name="Chat" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("input_field", "chat_table")]
 layout_mode = 3
 anchor_right = 0.83400005
 anchor_bottom = 0.83300006
-offset_right = -1010.85333
-offset_bottom = -541.42676
+offset_right = -0.020019531
+offset_bottom = 0.2399292
 script = ExtResource("23_2jnq7")
-chat_field = NodePath("ChatLine")
-chat_table = NodePath("ChatTable")
-chat_animator = NodePath("ChatAnimator")
-toggler_animator = NodePath("TogglerAnimator")
-chat_toggler = NodePath("ChatToggler")
+input_field = NodePath("LineEdit")
+chat_table = NodePath("TextEdit")
 
-[node name="ChatTable" type="TextEdit" parent="CanvasLayer/Chat"]
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Chat"]
 layout_mode = 0
 offset_left = 375.0
-offset_top = 600.8331
+offset_top = 674.99976
 offset_right = 775.0
-offset_bottom = 700.8331
+offset_bottom = 774.99976
 theme_override_fonts/font = ExtResource("4_4ls13")
 theme_override_font_sizes/font_size = 10
 editable = false
 
-[node name="ChatLine" type="LineEdit" parent="CanvasLayer/Chat"]
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Chat"]
 layout_mode = 0
 offset_left = 385.0
-offset_top = 702.4997
+offset_top = 782.49976
 offset_right = 765.0
-offset_bottom = 733.4997
+offset_bottom = 813.49976
 theme_override_fonts/font = ExtResource("4_4ls13")
 theme_override_font_sizes/font_size = 10
-
-[node name="ChatAnimator" type="AnimationPlayer" parent="CanvasLayer/Chat"]
-libraries = {
-&"": SubResource("AnimationLibrary_ovcgw")
-}
-
-[node name="ChatToggler" type="TextureButton" parent="CanvasLayer/Chat"]
-layout_mode = 0
-offset_left = 535.0
-offset_top = 569.167
-offset_right = 615.0
-offset_bottom = 594.167
-pivot_offset = Vector2(40, 12.5)
-texture_normal = ExtResource("24_i2bqy")
-texture_pressed = ExtResource("24_i2bqy")
-texture_hover = ExtResource("24_i2bqy")
-texture_disabled = ExtResource("24_i2bqy")
-texture_focused = ExtResource("24_i2bqy")
-stretch_mode = 0
-
-[node name="TogglerAnimator" type="AnimationPlayer" parent="CanvasLayer/Chat"]
-libraries = {
-&"": SubResource("AnimationLibrary_qkwvo")
-}
 
 [connection signal="animation_finished" from="CanvasLayer/Background" to="CanvasLayer/Background" method="_on_animation_finished"]
 [connection signal="value_changed" from="CanvasLayer/Settings/SettingsWindow/MusicSlider" to="CanvasLayer/Settings" method="_on_music_slider_value_changed"]
