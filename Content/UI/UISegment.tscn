@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://bk2sw51iswc8e"]
+[gd_scene load_steps=69 format=3 uid="uid://bk2sw51iswc8e"]
 
 [ext_resource type="Script" uid="uid://41wepuuba76j" path="res://Content/Classes/UIManagment/UIManager.gd" id="1_hcmuh"]
 [ext_resource type="Texture2D" uid="uid://5ks2st5d7ri2" path="res://Content/Assets/UI/Background/Background.png" id="2_4t6kl"]
@@ -23,7 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://dlkpfnabdur27" path="res://Content/Assets/UI/notifier.png" id="21_4855k"]
 [ext_resource type="Script" uid="uid://b6kothl3ilq1s" path="res://Content/Classes/UIManagment/Notifier.gd" id="21_cnhaw"]
 [ext_resource type="Script" uid="uid://dqmyjfy7haneo" path="res://Content/Classes/UIManagment/ChatManager.gd" id="23_2jnq7"]
-[ext_resource type="Texture2D" uid="uid://dykj3tbpusokn" path="res://Content/Assets/UI/chat_toggler.png" id="24_i2bqy"]
+[ext_resource type="Texture2D" uid="uid://bmdt0ct1nyxvi" path="res://Content/Assets/UI/chat_frame.png" id="24_b64ag"]
+[ext_resource type="Texture2D" uid="uid://cv6jc0teipyrg" path="res://Content/Assets/UI/field_frame.png" id="24_drfiy"]
+[ext_resource type="Texture2D" uid="uid://orkosjl2hhud" path="res://Content/Assets/UI/chat_toggler.png" id="24_i2bqy"]
+[ext_resource type="AudioStream" uid="uid://cyv2fjuo0fx0k" path="res://Content/Assets/Sounds/Music/along-the-wayside-medieval-folk-music-128697.mp3" id="25_6vdgs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kiu1e"]
 atlas = ExtResource("2_4t6kl")
@@ -298,7 +301,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(535, 569.167)]
+"values": [Vector2(545, 569.167)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -310,7 +313,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(375, 600.8331)]
+"values": [Vector2(375, 595)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -384,9 +387,22 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ChatFrame:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(375, 608.3331)]
+}
 
 [sub_resource type="Animation" id="Animation_drfiy"]
 resource_name = "collapse"
+length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -397,7 +413,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(535, 433.333), Vector2(535, 489.167), Vector2(535, 570)]
+"values": [Vector2(545, 425), Vector2(545, 481), Vector2(545, 562)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -409,7 +425,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(375, 464.99985), Vector2(375, 520.83325), Vector2(375, 601.6668)]
+"values": [Vector2(375, 460), Vector2(375, 515), Vector2(375, 595)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -471,6 +487,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ChatFrame:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 455.00018), Vector2(375, 510.00018), Vector2(375, 589.99976), Vector2(375, 602.4998)]
+}
 
 [sub_resource type="Animation" id="Animation_6vdgs"]
 resource_name = "expand"
@@ -484,7 +512,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(535, 569.167), Vector2(535, 530.833), Vector2(535, 433.333)]
+"values": [Vector2(545, 563), Vector2(545, 523), Vector2(545, 425)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -496,7 +524,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(375, 600.8331), Vector2(375, 562.4998), Vector2(375, 464.99985)]
+"values": [Vector2(375, 595), Vector2(375, 557), Vector2(375, 460)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -557,6 +585,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ChatFrame:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 589.99976), Vector2(375, 551.6669), Vector2(375, 455.00018)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ovcgw"]
@@ -656,7 +696,7 @@ frame = 9
 frame_progress = 1.0
 script = ExtResource("6_2j6l0")
 
-[node name="Settings" type="Control" parent="CanvasLayer"]
+[node name="Settings" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("music_slider", "audio_slider")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -89.1666
@@ -666,6 +706,8 @@ offset_bottom = -22.833302
 script = ExtResource("7_ntfnx")
 bus_name_music = "Music"
 bus_name_audio = "Audio"
+music_slider = NodePath("SettingsWindow/MusicSlider")
+audio_slider = NodePath("SettingsWindow/AudioSlider")
 
 [node name="SettingsWindow" type="TextureRect" parent="CanvasLayer/Settings"]
 layout_mode = 0
@@ -1031,9 +1073,11 @@ chat_toggler = NodePath("ChatToggler")
 [node name="ChatTable" type="TextEdit" parent="CanvasLayer/Chat"]
 layout_mode = 0
 offset_left = 375.0
-offset_top = 600.8331
+offset_top = 595.0
 offset_right = 775.0
-offset_bottom = 700.8331
+offset_bottom = 695.0
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_4ls13")
 theme_override_font_sizes/font_size = 10
 editable = false
@@ -1047,6 +1091,14 @@ offset_bottom = 733.4997
 theme_override_fonts/font = ExtResource("4_4ls13")
 theme_override_font_sizes/font_size = 10
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Chat/ChatLine"]
+layout_mode = 0
+offset_left = -1.666687
+offset_right = 190.33331
+offset_bottom = 16.0
+scale = Vector2(2, 2)
+texture = ExtResource("24_drfiy")
+
 [node name="ChatAnimator" type="AnimationPlayer" parent="CanvasLayer/Chat"]
 libraries = {
 &"": SubResource("AnimationLibrary_ovcgw")
@@ -1054,11 +1106,11 @@ libraries = {
 
 [node name="ChatToggler" type="TextureButton" parent="CanvasLayer/Chat"]
 layout_mode = 0
-offset_left = 535.0
+offset_left = 545.0
 offset_top = 569.167
-offset_right = 615.0
-offset_bottom = 594.167
-pivot_offset = Vector2(40, 12.5)
+offset_right = 605.0
+offset_bottom = 597.167
+pivot_offset = Vector2(30, 9)
 texture_normal = ExtResource("24_i2bqy")
 texture_pressed = ExtResource("24_i2bqy")
 texture_hover = ExtResource("24_i2bqy")
@@ -1071,9 +1123,25 @@ libraries = {
 &"": SubResource("AnimationLibrary_qkwvo")
 }
 
+[node name="ChatFrame" type="TextureRect" parent="CanvasLayer/Chat"]
+show_behind_parent = true
+z_index = 1
+layout_mode = 0
+offset_left = 375.0
+offset_top = 608.3331
+offset_right = 575.0
+offset_bottom = 662.3332
+scale = Vector2(2, 2)
+mouse_filter = 2
+texture = ExtResource("24_b64ag")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_6vdgs")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
 [connection signal="animation_finished" from="CanvasLayer/Background" to="CanvasLayer/Background" method="_on_animation_finished"]
-[connection signal="value_changed" from="CanvasLayer/Settings/SettingsWindow/MusicSlider" to="CanvasLayer/Settings" method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/Settings/SettingsWindow/AudioSlider" to="CanvasLayer/Settings" method="_on_audio_slider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Quickplay" to="." method="_on_quickplay_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Leaderboard" to="." method="_on_leaderboard_pressed"]

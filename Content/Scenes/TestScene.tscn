@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://ceenn2qent2x1"]
+[gd_scene load_steps=44 format=3 uid="uid://ceenn2qent2x1"]
 
 [ext_resource type="Texture2D" uid="uid://b3gw10tts6iky" path="res://Content/Assets/Tilesets/Grass.png" id="1_5lt6y"]
 [ext_resource type="Script" uid="uid://ci6roeejn6265" path="res://Content/Classes/UIManagment/GameSceneConnector.gd" id="1_201fe"]
@@ -25,6 +25,7 @@
 [ext_resource type="FontFile" uid="uid://2lp54jjc5bhb" path="res://Content/Assets/Fonts/zx_spectrum-7_bold.ttf" id="22_axmst"]
 [ext_resource type="Texture2D" uid="uid://cknk1ges0j2dk" path="res://Content/Assets/UI/Button_pressed.png" id="22_naoyn"]
 [ext_resource type="Texture2D" uid="uid://c8stfa8uvha08" path="res://Content/Assets/UI/Button_focused.png" id="23_rmix1"]
+[ext_resource type="AudioStream" uid="uid://mcn0wmcemta5" path="res://Content/Assets/Sounds/Music/the-tournament-280277.mp3" id="26_rmix1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8k7wh"]
 texture = ExtResource("1_5lt6y")
@@ -965,7 +966,7 @@ ingame_animator = NodePath("CanvasLayer/IngameUIAnimator")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayersManager/IngameUI"]
 
-[node name="IngameSettings" type="Control" parent="PlayersManager/IngameUI/CanvasLayer"]
+[node name="IngameSettings" type="Control" parent="PlayersManager/IngameUI/CanvasLayer" node_paths=PackedStringArray("music_slider", "audio_slider")]
 layout_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
@@ -981,6 +982,8 @@ grow_vertical = 0
 script = ExtResource("15_wborv")
 bus_name_music = "Music"
 bus_name_audio = "Audio"
+music_slider = NodePath("SettingsWindow/MusicSlider")
+audio_slider = NodePath("SettingsWindow/AudioSlider")
 
 [node name="SettingsWindow" type="TextureRect" parent="PlayersManager/IngameUI/CanvasLayer/IngameSettings"]
 layout_mode = 1
@@ -1102,6 +1105,12 @@ root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_axmst")
 }
+
+[node name="IngamePlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_rmix1")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="value_changed" from="PlayersManager/IngameUI/CanvasLayer/IngameSettings/SettingsWindow/MusicSlider" to="." method="_on_music_slider_value_changed"]

@@ -118,7 +118,7 @@ func SERVER_Send_chat_message (message : ChatMessage) -> bool:
 # --- Function for submitting and sending message to the chat
 func Send_message () -> void:
 	var message = chat_field.text.strip_edges()
-	var time = "now" # timestamp shit
+	var time = Time.get_time_string_from_system() # Overwrite by the server
 	if (message.length() > 0):
 		var chat_message = ChatMessage.create(
 			ThisClient.player_current_session,
