@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmvsrojgj0wcb"]
+
+[ext_resource type="PackedScene" uid="uid://cds15ustjlpc5" path="res://Content/Classes/Managers/PlayersManager/PlayersManager.tscn" id="1_m3as6"]
+[ext_resource type="PackedScene" uid="uid://08k1tap05ntj" path="res://Content/Classes/Managers/BulletsManager/BulletsManager.tscn" id="2_n6riq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PlayersManager" parent="." instance=ExtResource("1_m3as6")]
+
+[node name="BulletsManager" parent="." instance=ExtResource("2_n6riq")]

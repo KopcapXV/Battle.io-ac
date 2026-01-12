@@ -24,6 +24,15 @@ func _ready () -> void:
 func Enter ():
 	print("attack enter")
 	
+	var direction = Vector2.ZERO
+	var packed_direction : PackedByteArray = [0]
+	if direction.x > 0: packed_direction[0] = 128
+	if direction.x < 0: packed_direction[0] |= 32
+	if direction.y > 0: packed_direction[0] |= 8
+	if direction.y < 0: packed_direction[0] |= 2
+	print("<StateMove> : packed direction is ", packed_direction)
+	WEBSOCKET.send_byte_binary_data(WEBSOCKET.SEND_COMMAND.PLAYER_DIRECTION, packed_direction)
+	
 	if (not can_do):
 		its_state_machine.Change_state("stateidle")
 		return

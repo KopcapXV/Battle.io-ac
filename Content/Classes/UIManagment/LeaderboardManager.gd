@@ -10,16 +10,13 @@ const MAX_PLACES : int = 6
 const NO_PLAYER : String = "NoName --"
 
 func _ready () -> void:
-	var leaders = SERVER_Get_leaders()
+	var leaders : Array [Leader]
 	Initialize_leaderboard(leaders)
+	Signals.LeaderboardWasget.connect(SERVER_Get_leaders)
 
 # --- Function server request for the lead places
-func SERVER_Get_leaders () -> Array [Leader]:
-	var leaders : Array [Leader]
-	# - ! - ! - ! - ! - ! -
-	# REQUEST TO SERVER
-	# Data on a place of a leaderboard -> PLAYER'S NICKNAME, PLAYER'S SCORE
-	# - ! - ! - ! - ! - ! -
+func SERVER_Get_leaders (id : int, leaders : Array [Leader]) -> Array [Leader]:
+	Initialize_leaderboard(leaders)
 	return leaders
 
 # --- Function for initializing places
@@ -39,26 +36,26 @@ func _input(event) -> void:
 		var leaders1 : Array [Leader]
 		var l1 = Leader.new()
 		l1.nickname = "Player1"
-		l1.score = randi_range(10, 99)
+		l1.score = randi_range(10, 100)
 		leaders1.append(l1)
 		var l2 = Leader.new()
-		l2.nickname = "Player2"
-		l2.score = randi_range(10, 99)
+		l2.nickname = "Player?"
+		l2.score = randi_range(5, 99)
 		leaders1.append(l2)
 		var l3 = Leader.new()
-		l3.nickname = "Player3"
-		l3.score = randi_range(10, 99)
+		l3.nickname = "Player?"
+		l3.score = randi_range(10, 50)
 		leaders1.append(l3)
 		var l4 = Leader.new()
-		l4.nickname = "Player4"
-		l4.score = randi_range(10, 99)
+		l4.nickname = "Player?"
+		l4.score = randi_range(19, 99)
 		leaders1.append(l4)
 		var l5 = Leader.new()
-		l5.nickname = "Player5"
-		l5.score = randi_range(10, 99)
+		l5.nickname = "Player?"
+		l5.score = randi_range(10, 39)
 		leaders1.append(l5)
 		var l6 = Leader.new()
-		l6.nickname = "Player3"
-		l6.score = randi_range(10, 99)
+		l6.nickname = "Player?"
+		l6.score = randi_range(10, 500)
 		leaders1.append(l6)
 		Initialize_leaderboard(leaders1)

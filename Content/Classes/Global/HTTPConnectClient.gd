@@ -6,13 +6,13 @@ signal SessionAccepted(URL: String, port : int)
 const client_version : int = 1
 
 const PREFIX : String = "http://"
-const SERVER_URL : String = "127.0.0.1:5000"
+const SERVER_URL : String = "95.174.108.206:5000"
 const CONNECT_TO_ROOM_ENDPOINT : String = "/connect"
 var ROOM_URL : String = "127.0.0.1"
-var ROOM_WS_PORT : int = 9080
-var ROOM_ACCEPT_PORT : int = 9090
+var ROOM_WS_PORT : int = 9001
+var ROOM_ACCEPT_PORT : int = 9000
 
-var playerId : int = 333
+var playerId : int = 2
 var globalId : int 
 var roomKey : int = 222
 
@@ -28,7 +28,7 @@ var _new_room_requester : HTTPRequest = HTTPRequest.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	playerId = randi_range(10, 40)
+	playerId = randi_range(2, 55)
 	add_child(_room_accepter)
 	_room_accepter.request_completed.connect(_accept_session_response)
 	
@@ -36,9 +36,13 @@ func _ready() -> void:
 	_new_room_requester.request_completed.connect(_get_room_response)
 	
 	#get_room()
-	#await SessionAccepted
-	#await get_tree().create_timer(3).timeout
-	accept_session()
+	
+	#accept_session()
+	
+	#playerId = 34
+	#roomKey = 1266597982
+	#globalId = 1
+	#session_accepted = true
 	
 	
 
@@ -69,6 +73,9 @@ func _get_room_response(result, response_code, headers, body):
 
 func accept_session():
 	print("<Server> : connecting to accepter")
+	
+	GAME_DATA.clear()
+	
 	var err : Error
 	var body : String = JSON.new().stringify({
 		"playerId": playerId

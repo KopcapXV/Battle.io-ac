@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://08k1tap05ntj"]
+
+[ext_resource type="Script" uid="uid://btileprm15chm" path="res://Content/Classes/Managers/BulletsManager/bullets_manager.gd" id="1_comcm"]
+
+[node name="BulletsManager" type="Node2D"]
+script = ExtResource("1_comcm")
+metadata/_custom_type_script = "uid://btileprm15chm"

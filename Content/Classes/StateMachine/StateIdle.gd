@@ -19,16 +19,30 @@ func Exit ():
 # to change the state dynamicly (only for not blocking states)
 func Handle_input (_event):
 	# Handle movement
-	if 	(Input.get_vector("left", "right", "up", "down") != Vector2.ZERO):
-		its_state_machine.Change_state("statemove")
-		
-	# Handle attacking
-	elif (Input).is_action_just_pressed("attack_1"):
-
-		its_state_machine.Change_state("statedashattack")
+	if (its_state_object.is_local_player()):
+		if Input.get_vector("left", "right", "up", "down") != Vector2.ZERO:
+			its_state_machine.Change_state("statemove")
+			return
+		# Handle attacking
+		if (Input).is_action_just_pressed("attack_1"):
+			its_state_machine.Change_state("statedashattack")
+	else:
+		if its_state_object.direction != Vector2.ZERO:
+			its_state_machine.Change_state("statemove")
 	
 # / Update state function /
 func Update (_delta):
+	if its_state_object.is_local_player():
+		if Input.get_vector("left", "right", "up", "down") != Vector2.ZERO:
+			its_state_machine.Change_state("statemove")
+			return
+		elif Input.is_action_just_pressed("attack_1"):
+			its_state_machine.Change_state("statedashattack")
+	else:
+		#print("<StateIdle> : anotherplayer dir ", its_state_object.direction)
+		if its_state_object.direction != Vector2.ZERO:
+			its_state_machine.Change_state("statemove")
+			return
 	its_state_object.for_animation_object.play("idle")
 
 # / Physics update function /

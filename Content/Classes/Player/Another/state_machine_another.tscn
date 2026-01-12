@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3ly5kwtp0nbm"]
+
+[ext_resource type="Script" uid="uid://d1jmhfboxpv47" path="res://Content/Classes/StateMachine/StateMachine.gd" id="1_ochwo"]
+[ext_resource type="Script" uid="uid://cq6ch2433m4hb" path="res://Content/Classes/StateMachine/StateMove.gd" id="2_f2db0"]
+[ext_resource type="Script" uid="uid://b2f0vn38ikt0m" path="res://Content/Classes/StateMachine/StateIdle.gd" id="3_5vvty"]
+[ext_resource type="Script" uid="uid://dwoqbcva10hhy" path="res://Content/Classes/StateMachine/StateDashAttack.gd" id="4_l4ixr"]
+
+[node name="StateMachineAnother" type="Node"]
+script = ExtResource("1_ochwo")
+metadata/_custom_type_script = "uid://d1jmhfboxpv47"
+
+[node name="StateMove" type="Node" parent="."]
+script = ExtResource("2_f2db0")
+metadata/_custom_type_script = "uid://cq6ch2433m4hb"
+
+[node name="StateIdle" type="Node" parent="."]
+script = ExtResource("3_5vvty")
+metadata/_custom_type_script = "uid://b2f0vn38ikt0m"
+
+[node name="StateDashAttack" type="Node" parent="."]
+script = ExtResource("4_l4ixr")
+metadata/_custom_type_script = "uid://dwoqbcva10hhy"

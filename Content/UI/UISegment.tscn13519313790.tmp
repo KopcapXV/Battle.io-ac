@@ -1,0 +1,1465 @@
+[gd_scene load_steps=81 format=3 uid="uid://bk2sw51iswc8e"]
+
+[ext_resource type="Script" uid="uid://41wepuuba76j" path="res://Content/Classes/UIManagment/UIManager.gd" id="1_hcmuh"]
+[ext_resource type="Texture2D" uid="uid://5ks2st5d7ri2" path="res://Content/Assets/UI/Background/Background.png" id="2_4t6kl"]
+[ext_resource type="Texture2D" uid="uid://dlgjknn3ihwet" path="res://Content/Assets/UI/Menu.png" id="2_hcmuh"]
+[ext_resource type="Texture2D" uid="uid://c0ewqct877f5p" path="res://Content/Assets/UI/Button.png" id="3_4ls13"]
+[ext_resource type="Texture2D" uid="uid://cyn7pgefypnnf" path="res://Content/Assets/UI/Background/BG-Idle1.png" id="3_rmkcw"]
+[ext_resource type="Texture2D" uid="uid://m5qscjw5mvva" path="res://Content/Assets/UI/Background/BG-Idle2.png" id="4_2j6l0"]
+[ext_resource type="FontFile" uid="uid://2lp54jjc5bhb" path="res://Content/Assets/Fonts/zx_spectrum-7_bold.ttf" id="4_4ls13"]
+[ext_resource type="Texture2D" uid="uid://xga6ve2ux052" path="res://Content/Assets/UI/Main_menu_placeholder.png" id="5_pd731"]
+[ext_resource type="Texture2D" uid="uid://spqscyp8plps" path="res://Content/Assets/UI/Background/BG-Idle3.png" id="5_rmkcw"]
+[ext_resource type="Script" uid="uid://dckov4qr6eevd" path="res://Content/Classes/UIManagment/BackgroundManager.gd" id="6_2j6l0"]
+[ext_resource type="Texture2D" uid="uid://bmt5mg0u8qvsi" path="res://Content/Assets/UI/Empty_sheet_menu.png" id="6_ynag5"]
+[ext_resource type="Texture2D" uid="uid://r30uer4tp55g" path="res://Content/Assets/UI/leaderboard_placeholder.png" id="7_eaahh"]
+[ext_resource type="Script" uid="uid://ygkicfnmw80c" path="res://Content/Classes/UIManagment/SettingsManager.gd" id="7_ntfnx"]
+[ext_resource type="Texture2D" uid="uid://51druonmrnva" path="res://Content/Assets/UI/Settings.png" id="9_r3l1u"]
+[ext_resource type="Texture2D" uid="uid://cqjuro4sygi3g" path="res://Content/Assets/UI/Grabber_highlight.png" id="10_evxs1"]
+[ext_resource type="Script" uid="uid://d0pmi1i1b8hc1" path="res://Content/Classes/UIManagment/LeaderboardManager.gd" id="11_0nvf4"]
+[ext_resource type="Texture2D" uid="uid://drgyoos23823n" path="res://Content/Assets/UI/Grabber.png" id="11_1lec1"]
+[ext_resource type="Texture2D" uid="uid://54jquvqkpsi7" path="res://Content/Assets/UI/Slider.png" id="12_r3l1u"]
+[ext_resource type="Texture2D" uid="uid://cknk1ges0j2dk" path="res://Content/Assets/UI/Button_pressed.png" id="17_bwm1n"]
+[ext_resource type="Texture2D" uid="uid://c8stfa8uvha08" path="res://Content/Assets/UI/Button_focused.png" id="18_evxs1"]
+[ext_resource type="Texture2D" uid="uid://dlkpfnabdur27" path="res://Content/Assets/UI/notifier.png" id="21_4855k"]
+[ext_resource type="Script" uid="uid://b6kothl3ilq1s" path="res://Content/Classes/UIManagment/Notifier.gd" id="21_cnhaw"]
+[ext_resource type="Script" uid="uid://dqmyjfy7haneo" path="res://Content/Classes/UIManagment/ChatManager.gd" id="23_2jnq7"]
+[ext_resource type="Texture2D" uid="uid://bmdt0ct1nyxvi" path="res://Content/Assets/UI/chat_frame.png" id="24_b64ag"]
+[ext_resource type="Texture2D" uid="uid://cv6jc0teipyrg" path="res://Content/Assets/UI/field_frame.png" id="24_drfiy"]
+[ext_resource type="Texture2D" uid="uid://orkosjl2hhud" path="res://Content/Assets/UI/chat_toggler.png" id="24_i2bqy"]
+[ext_resource type="AudioStream" uid="uid://cyv2fjuo0fx0k" path="res://Content/Assets/Sounds/Music/along-the-wayside-medieval-folk-music-128697.mp3" id="25_6vdgs"]
+[ext_resource type="Script" uid="uid://1yrjss4v00ao" path="res://Content/Classes/UIManagment/QPManager.gd" id="27_k3qy0"]
+[ext_resource type="Texture2D" uid="uid://bfpt5o8fuixuw" path="res://Content/Assets/UI/quickplay_window.png" id="27_ovcgw"]
+[ext_resource type="Texture2D" uid="uid://cvxjc4kfq8bs0" path="res://Content/Assets/Testable/quiet_sprite.png" id="29_eq4af"]
+[ext_resource type="Texture2D" uid="uid://bbbbu7b0e13rm" path="res://Content/Assets/UI/Result_window.png" id="30_qkwvo"]
+[ext_resource type="Script" uid="uid://io4atlepc1nb" path="res://Content/Classes/UIManagment/ResultsManager.gd" id="30_t8gk5"]
+[ext_resource type="Texture2D" uid="uid://but752aoaf60s" path="res://Content/Assets/UI/matchmaking_window.png" id="32_n1c7k"]
+[ext_resource type="Texture2D" uid="uid://cdbksw541gahq" path="res://Content/Assets/UI/progress_circle.png" id="33_mute0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiu1e"]
+atlas = ExtResource("2_4t6kl")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwm1n"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evxs1"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(576, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4855k"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(1152, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnhaw"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(1728, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jnq7"]
+atlas = ExtResource("3_rmkcw")
+region = Rect2(2304, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2bqy"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vdgs"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(576, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b64ag"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(1152, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drfiy"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(1728, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovcgw"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(2304, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3qy0"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(2880, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq4af"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(3456, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkwvo"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(4032, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8gk5"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(4608, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pot4p"]
+atlas = ExtResource("4_2j6l0")
+region = Rect2(5184, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j6l0"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(0, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1c7k"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(576, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mute0"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(1152, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clpa6"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(1728, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53lyk"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(2304, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky1bw"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(2880, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rau6h"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(3456, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idnka"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(4032, 0, 576, 324)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0881"]
+atlas = ExtResource("5_rmkcw")
+region = Rect2(4608, 0, 576, 324)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n1c7k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kiu1e")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwm1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evxs1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4855k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnhaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jnq7")
+}],
+"loop": false,
+"name": &"idle_1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2bqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vdgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b64ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drfiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovcgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3qy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq4af")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkwvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8gk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pot4p")
+}],
+"loop": false,
+"name": &"idle_2",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j6l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1c7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mute0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clpa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53lyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky1bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rau6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idnka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0881")
+}],
+"loop": false,
+"name": &"idle_3",
+"speed": 8.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3l1u"]
+texture = ExtResource("12_r3l1u")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3l1u"]
+bg_color = Color(0.439216, 0.384314, 0.0823529, 1)
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lec1"]
+bg_color = Color(0.439216, 0.384314, 0.0823529, 1)
+expand_margin_bottom = 1.0
+
+[sub_resource type="Animation" id="Animation_2jnq7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.6666603, 40)]
+}
+
+[sub_resource type="Animation" id="Animation_i2bqy"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.667, 40), Vector2(1.6666603, 202.5)]
+}
+
+[sub_resource type="Animation" id="Animation_cnhaw"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.6666603, 202.5), Vector2(1.6666603, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vdgs"]
+_data = {
+&"RESET": SubResource("Animation_2jnq7"),
+&"hide": SubResource("Animation_i2bqy"),
+&"show": SubResource("Animation_cnhaw")
+}
+
+[sub_resource type="Animation" id="Animation_b64ag"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(545, 569.167)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatTable:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(375, 595)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChatLine:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(385, 702.4997)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Leaderboard:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Menu:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Main:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ChatToggler:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ChatFrame:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(375, 608.3331)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Quickplay:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-107, -75.4)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../GameResults:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_drfiy"]
+resource_name = "collapse"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(545, 425), Vector2(545, 481), Vector2(545, 562)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatTable:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 460), Vector2(375, 515), Vector2(375, 595)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChatLine:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(385, 566.6665), Vector2(385, 622.4999), Vector2(385, 703.3334)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Leaderboard:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Menu:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Main:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ChatFrame:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 455.00018), Vector2(375, 510.00018), Vector2(375, 589.99976), Vector2(375, 602.4998)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Quickplay:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-107, -116), Vector2(-107, -75)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../GameResults:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -41), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6vdgs"]
+resource_name = "expand"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(545, 563), Vector2(545, 523), Vector2(545, 425)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatTable:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 595), Vector2(375, 557), Vector2(375, 460)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChatLine:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(385, 702.4997), Vector2(385, 664.1664), Vector2(385, 566.6665)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Leaderboard:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Menu:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Main:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ChatFrame:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 589.99976), Vector2(375, 551.6669), Vector2(375, 455.00018)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Quickplay:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-107, -75.4), Vector2(-107, -116)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../GameResults:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -41)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ovcgw"]
+_data = {
+&"RESET": SubResource("Animation_b64ag"),
+&"chat_collapse": SubResource("Animation_drfiy"),
+&"chat_expand": SubResource("Animation_6vdgs")
+}
+
+[sub_resource type="Animation" id="Animation_k3qy0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ovcgw"]
+resource_name = "button_hover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_eq4af"]
+resource_name = "button_unhover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkwvo"]
+_data = {
+&"RESET": SubResource("Animation_k3qy0"),
+&"button_hover": SubResource("Animation_ovcgw"),
+&"button_unhover": SubResource("Animation_eq4af")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbtkp"]
+atlas = ExtResource("33_mute0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nloa8"]
+atlas = ExtResource("33_mute0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyxp5"]
+atlas = ExtResource("33_mute0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjg8j"]
+atlas = ExtResource("33_mute0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nuswl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbtkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nloa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyxp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjg8j")
+}],
+"loop": true,
+"name": &"progress",
+"speed": 10.0
+}]
+
+[node name="UISegment" type="Control" node_paths=PackedStringArray("menu_section_main", "menu_section_settings", "menu_section_leaderboard", "menu_label", "menu_quickplay", "menu_result", "menu_matchmaking", "animator_main", "animator_settings", "animator_leaderboard")]
+z_index = -1
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -75.4
+offset_right = 6.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hcmuh")
+menu_section_main = NodePath("CanvasLayer/Main/MainWindow")
+menu_section_settings = NodePath("CanvasLayer/Settings")
+menu_section_leaderboard = NodePath("CanvasLayer/Leaderboard/LeaderboardWindow")
+menu_label = NodePath("CanvasLayer/Menu/MenuWindow/Label")
+menu_quickplay = NodePath("CanvasLayer/Quickplay")
+menu_result = NodePath("CanvasLayer/GameResults")
+menu_matchmaking = NodePath("CanvasLayer/Matchmaking")
+animator_main = NodePath("CanvasLayer/Main/animator")
+animator_settings = NodePath("CanvasLayer/Settings/animator")
+animator_leaderboard = NodePath("CanvasLayer/Leaderboard/animator")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(1.2, 1.2)
+transform = Transform2D(1.2, 0, 0, 1.2, 0, 0)
+
+[node name="Background" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(545, 301.667)
+scale = Vector2(2.3, 2.278)
+sprite_frames = SubResource("SpriteFrames_n1c7k")
+script = ExtResource("6_2j6l0")
+
+[node name="Settings" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("music_slider", "audio_slider")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -89.1666
+offset_top = -62.8333
+offset_right = -49.1666
+offset_bottom = -22.833302
+script = ExtResource("7_ntfnx")
+bus_name_music = "Music"
+bus_name_audio = "Audio"
+music_slider = NodePath("SettingsWindow/MusicSlider")
+audio_slider = NodePath("SettingsWindow/AudioSlider")
+
+[node name="SettingsWindow" type="TextureRect" parent="CanvasLayer/Settings"]
+layout_mode = 0
+offset_left = 679.0
+offset_top = 318.0
+offset_right = 807.0
+offset_bottom = 414.0
+scale = Vector2(2, 2)
+texture = ExtResource("9_r3l1u")
+
+[node name="MusicSlider" type="HSlider" parent="CanvasLayer/Settings/SettingsWindow"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 25.5
+offset_right = 112.0
+offset_bottom = 41.5
+theme_override_icons/grabber = ExtResource("11_1lec1")
+theme_override_icons/grabber_highlight = ExtResource("10_evxs1")
+theme_override_icons/grabber_disabled = ExtResource("11_1lec1")
+theme_override_styles/slider = SubResource("StyleBoxTexture_r3l1u")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_r3l1u")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_1lec1")
+step = 3.0
+
+[node name="AudioSlider" type="HSlider" parent="CanvasLayer/Settings/SettingsWindow"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 60.5
+offset_right = 112.0
+offset_bottom = 76.5
+theme_override_icons/grabber = ExtResource("11_1lec1")
+theme_override_icons/grabber_highlight = ExtResource("10_evxs1")
+theme_override_icons/grabber_disabled = ExtResource("11_1lec1")
+theme_override_styles/slider = SubResource("StyleBoxTexture_r3l1u")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_r3l1u")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_1lec1")
+step = 3.0
+
+[node name="animator" type="AnimationPlayer" parent="CanvasLayer/Settings"]
+
+[node name="Leaderboard" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("places")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -89.1666
+offset_top = -62.8333
+offset_right = -49.1666
+offset_bottom = -22.833302
+script = ExtResource("11_0nvf4")
+places = [NodePath("LeaderboardWindow/Place1/Label1"), NodePath("LeaderboardWindow/Place2/Label2"), NodePath("LeaderboardWindow/Place3/Label3"), NodePath("LeaderboardWindow/Place4/Label4"), NodePath("LeaderboardWindow/Place5/Label5"), NodePath("LeaderboardWindow/Place6/Label6")]
+
+[node name="LeaderboardWindow" type="TextureRect" parent="CanvasLayer/Leaderboard"]
+layout_mode = 0
+offset_left = 679.0
+offset_top = 173.0
+offset_right = 807.0
+offset_bottom = 341.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_ynag5")
+stretch_mode = 3
+
+[node name="Place1" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -2.5
+offset_right = 118.0
+offset_bottom = 37.5
+texture = ExtResource("7_eaahh")
+stretch_mode = 3
+
+[node name="Label1" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place1"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 31.5
+theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place2" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 24.0
+offset_right = 118.0
+offset_bottom = 64.0
+texture = ExtResource("7_eaahh")
+stretch_mode = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place3" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 118.0
+offset_bottom = 90.0
+texture = ExtResource("7_eaahh")
+stretch_mode = 3
+
+[node name="Label3" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place3"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place4" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 76.0
+offset_right = 118.0
+offset_bottom = 116.0
+texture = ExtResource("7_eaahh")
+stretch_mode = 3
+
+[node name="Label4" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place4"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place5" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 102.0
+offset_right = 118.0
+offset_bottom = 142.0
+texture = ExtResource("7_eaahh")
+stretch_mode = 3
+
+[node name="Label5" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place5"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="Place6" type="TextureRect" parent="CanvasLayer/Leaderboard/LeaderboardWindow"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 128.0
+offset_right = 118.0
+offset_bottom = 168.0
+texture = ExtResource("7_eaahh")
+stretch_mode = 3
+
+[node name="Label6" type="Label" parent="CanvasLayer/Leaderboard/LeaderboardWindow/Place6"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.5
+offset_right = 104.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.125911, 0.125911, 0.125911, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="animator" type="AnimationPlayer" parent="CanvasLayer/Leaderboard"]
+
+[node name="Menu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -89.1666
+offset_top = -62.8333
+offset_right = -49.1666
+offset_bottom = -22.833302
+
+[node name="MenuWindow" type="TextureRect" parent="CanvasLayer/Menu"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 221.0
+offset_right = 539.0
+offset_bottom = 365.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_hcmuh")
+
+[node name="Quickplay" type="TextureButton" parent="CanvasLayer/Menu/MenuWindow"]
+z_index = 1
+layout_mode = 0
+offset_left = 13.0
+offset_top = 29.0
+offset_right = 109.0
+offset_bottom = 51.0
+texture_normal = ExtResource("3_4ls13")
+texture_pressed = ExtResource("17_bwm1n")
+texture_hover = ExtResource("18_evxs1")
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow/Quickplay"]
+layout_mode = 0
+offset_top = -6.83333
+offset_right = 96.0
+offset_bottom = 16.1667
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "ИГРАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Settings" type="TextureButton" parent="CanvasLayer/Menu/MenuWindow"]
+layout_mode = 0
+offset_left = 12.5
+offset_top = 56.5
+offset_right = 108.5
+offset_bottom = 78.5
+action_mode = 0
+texture_normal = ExtResource("3_4ls13")
+texture_pressed = ExtResource("17_bwm1n")
+texture_hover = ExtResource("18_evxs1")
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow/Settings"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = -5.91666
+offset_right = 96.5
+offset_bottom = 17.0833
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "НАСТРОЙКИ"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Leaderboard" type="TextureButton" parent="CanvasLayer/Menu/MenuWindow"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 85.5
+offset_right = 109.0
+offset_bottom = 107.5
+texture_normal = ExtResource("3_4ls13")
+texture_pressed = ExtResource("17_bwm1n")
+texture_hover = ExtResource("18_evxs1")
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow/Leaderboard"]
+layout_mode = 0
+offset_top = -5.91666
+offset_right = 96.0
+offset_bottom = 17.0833
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "ЛИДЕРЫ"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Back" type="TextureButton" parent="CanvasLayer/Menu/MenuWindow"]
+layout_mode = 0
+offset_left = 12.5
+offset_top = 113.5
+offset_right = 108.5
+offset_bottom = 135.5
+texture_normal = ExtResource("3_4ls13")
+texture_pressed = ExtResource("17_bwm1n")
+texture_hover = ExtResource("18_evxs1")
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow/Back"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = -5.91667
+offset_right = 96.5
+offset_bottom = 17.0833
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "НАЗАД"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/MenuWindow"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "ГЛАВНОЕ МЕНЮ"
+
+[node name="Main" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -89.1666
+offset_top = -62.8333
+offset_right = -49.1666
+offset_bottom = -22.833302
+
+[node name="MainWindow" type="TextureRect" parent="CanvasLayer/Main"]
+z_index = 1
+layout_mode = 0
+offset_left = 679.0
+offset_top = 151.0
+offset_right = 787.0
+offset_bottom = 330.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_pd731")
+
+[node name="animator" type="AnimationPlayer" parent="CanvasLayer/Main"]
+
+[node name="Notifier" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("notification_label", "notification_animator")]
+layout_mode = 3
+anchor_top = 0.82800007
+anchor_bottom = 0.82900006
+offset_left = 44.16667
+offset_top = -119.49344
+offset_right = 170.0
+offset_bottom = -51.046814
+script = ExtResource("21_cnhaw")
+notification_label = NodePath("TextureRect/Label")
+notification_animator = NodePath("AnimationPlayer")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Notifier"]
+layout_mode = 0
+offset_left = 1.6666603
+offset_top = 40.0
+offset_right = 65.66666
+offset_bottom = 88.00006
+scale = Vector2(2, 2)
+texture = ExtResource("21_4855k")
+
+[node name="Label" type="Label" parent="CanvasLayer/Notifier/TextureRect"]
+layout_mode = 0
+offset_left = 5.8333316
+offset_top = 8.333333
+offset_right = 58.749996
+offset_bottom = 31.333332
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "notify"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Notifier"]
+libraries = {
+&"": SubResource("AnimationLibrary_6vdgs")
+}
+
+[node name="Chat" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("chat_field", "chat_table", "chat_animator", "toggler_animator", "chat_toggler")]
+layout_mode = 3
+anchor_right = 0.83400005
+anchor_bottom = 0.83300006
+offset_right = -1010.85333
+offset_bottom = -541.42676
+script = ExtResource("23_2jnq7")
+chat_field = NodePath("ChatLine")
+chat_table = NodePath("ChatTable")
+chat_animator = NodePath("ChatAnimator")
+toggler_animator = NodePath("TogglerAnimator")
+chat_toggler = NodePath("ChatToggler")
+
+[node name="ChatTable" type="TextEdit" parent="CanvasLayer/Chat"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 595.0
+offset_right = 775.0
+offset_bottom = 695.0013
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+editable = false
+
+[node name="ChatLine" type="LineEdit" parent="CanvasLayer/Chat"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 702.4997
+offset_right = 765.0
+offset_bottom = 733.4997
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Chat/ChatLine"]
+layout_mode = 0
+offset_left = -1.666687
+offset_right = 190.33331
+offset_bottom = 16.0
+scale = Vector2(2, 2)
+texture = ExtResource("24_drfiy")
+
+[node name="ChatAnimator" type="AnimationPlayer" parent="CanvasLayer/Chat"]
+libraries = {
+&"": SubResource("AnimationLibrary_ovcgw")
+}
+
+[node name="ChatToggler" type="TextureButton" parent="CanvasLayer/Chat"]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 569.167
+offset_right = 605.0
+offset_bottom = 597.1679
+pivot_offset = Vector2(30, 9)
+texture_normal = ExtResource("24_i2bqy")
+texture_pressed = ExtResource("24_i2bqy")
+texture_hover = ExtResource("24_i2bqy")
+texture_disabled = ExtResource("24_i2bqy")
+texture_focused = ExtResource("24_i2bqy")
+stretch_mode = 0
+
+[node name="TogglerAnimator" type="AnimationPlayer" parent="CanvasLayer/Chat"]
+libraries = {
+&"": SubResource("AnimationLibrary_qkwvo")
+}
+
+[node name="ChatFrame" type="TextureRect" parent="CanvasLayer/Chat"]
+show_behind_parent = true
+z_index = 1
+layout_mode = 0
+offset_left = 375.0
+offset_top = 608.3331
+offset_right = 575.00006
+offset_bottom = 662.3343
+scale = Vector2(2, 2)
+mouse_filter = 2
+texture = ExtResource("24_b64ag")
+
+[node name="Quickplay" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("character_image", "character_label", "previous_button", "next_button", "select_button")]
+layout_mode = 3
+anchor_right = 0.83100003
+anchor_bottom = 0.82400006
+offset_left = -107.0
+offset_top = -75.4
+offset_right = -937.8467
+offset_bottom = -499.1152
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("27_k3qy0")
+character_image = NodePath("CharacterImage")
+character_label = NodePath("QPWindow/CharacterLabel")
+previous_button = NodePath("QPWindow/LeftButton")
+next_button = NodePath("QPWindow/RightButton")
+select_button = NodePath("QPWindow/PickButton")
+
+[node name="QPWindow" type="TextureRect" parent="CanvasLayer/Quickplay"]
+z_index = 1
+layout_mode = 0
+offset_left = 697.0
+offset_top = 233.73338
+offset_right = 817.0
+offset_bottom = 377.7334
+scale = Vector2(2, 2)
+texture = ExtResource("27_ovcgw")
+
+[node name="PickButton" type="Button" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.424
+anchor_top = -0.523
+anchor_right = 2.02
+anchor_bottom = 1.5400001
+offset_left = 324.21332
+offset_top = 192.81198
+offset_right = -155.31668
+offset_bottom = -93.01007
+flat = true
+
+[node name="LeftButton" type="Button" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.4160001
+anchor_top = -0.49600002
+anchor_right = 1.983
+anchor_bottom = 1.511
+offset_left = 298.25333
+offset_top = 188.92398
+offset_right = -209.21
+offset_bottom = -88.83412
+flat = true
+
+[node name="RightButton" type="Button" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.4160001
+anchor_top = -0.49600002
+anchor_right = 1.983
+anchor_bottom = 1.511
+offset_left = 381.17
+offset_top = 188.09065
+offset_right = -126.29336
+offset_bottom = -89.66745
+flat = true
+
+[node name="CharacterLabel" type="Label" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 0
+offset_left = 14.166664
+offset_top = 92.49997
+offset_right = 105.83332
+offset_bottom = 115.49997
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonbLabel" type="Label" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 0
+offset_left = 32.083305
+offset_top = 111.24997
+offset_right = 88.083305
+offset_bottom = 134.24997
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "ВЫБРАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterImage" type="TextureRect" parent="CanvasLayer/Quickplay"]
+z_index = 1
+layout_mode = 0
+offset_left = 737.8333
+offset_top = 250.83333
+offset_right = 902.0
+offset_bottom = 413.3333
+texture = ExtResource("29_eq4af")
+stretch_mode = 4
+
+[node name="GameResults" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("label_for_kills", "label_for_deaths", "label_for_killstreak", "label_for_score", "label_for_result")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("30_t8gk5")
+label_for_kills = NodePath("TextureRect/LabelKills")
+label_for_deaths = NodePath("TextureRect/LabelDeaths")
+label_for_killstreak = NodePath("TextureRect/LabelKillStreak")
+label_for_score = NodePath("TextureRect/LabelScore")
+label_for_result = NodePath("TextureRect/LabelResult")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameResults"]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 246.66667
+offset_right = 748.0
+offset_bottom = 326.6667
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("30_qkwvo")
+
+[node name="LabelKills" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
+layout_mode = 0
+offset_left = 6.249949
+offset_top = 7.9166665
+offset_right = 23.749979
+offset_bottom = 21.666666
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelDeaths" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
+layout_mode = 0
+offset_left = 6.249949
+offset_top = 25.0
+offset_right = 23.749979
+offset_bottom = 38.75
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelKillStreak" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
+layout_mode = 0
+offset_left = 6.249949
+offset_top = 42.083332
+offset_right = 23.749979
+offset_bottom = 55.833347
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelScore" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
+layout_mode = 0
+offset_left = 6.2499504
+offset_top = 59.166664
+offset_right = 23.74998
+offset_bottom = 72.91668
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelResult" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
+layout_mode = 0
+offset_left = 46.249973
+offset_top = -15.416666
+offset_right = 112.5
+offset_bottom = 7.583334
+theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Matchmaking" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -107.0
+offset_top = -75.4
+offset_right = -67.0
+offset_bottom = -35.4
+
+[node name="Matchmaking" type="TextureRect" parent="CanvasLayer/Matchmaking"]
+layout_mode = 0
+offset_left = 298.66675
+offset_top = 184.56667
+offset_right = 554.66675
+offset_bottom = 312.56665
+scale = Vector2(3, 3)
+texture = ExtResource("32_n1c7k")
+
+[node name="ProgressCircle" type="AnimatedSprite2D" parent="CanvasLayer/Matchmaking/Matchmaking"]
+position = Vector2(82.22218, 57.22222)
+sprite_frames = SubResource("SpriteFrames_nuswl")
+animation = &"progress"
+autoplay = "progress"
+frame_progress = 0.50080794
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_6vdgs")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[connection signal="animation_finished" from="CanvasLayer/Background" to="CanvasLayer/Background" method="_on_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Quickplay" to="." method="_on_quickplay_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Leaderboard" to="." method="_on_leaderboard_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Back" to="." method="_on_back_pressed"]
+[connection signal="animation_finished" from="CanvasLayer/Notifier/AnimationPlayer" to="CanvasLayer/Notifier" method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/Quickplay/QPWindow/PickButton" to="." method="_on_pick_pressed"]

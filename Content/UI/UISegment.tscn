@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bk2sw51iswc8e"]
+[gd_scene load_steps=74 format=3 uid="uid://bk2sw51iswc8e"]
 
 [ext_resource type="Script" uid="uid://41wepuuba76j" path="res://Content/Classes/UIManagment/UIManager.gd" id="1_hcmuh"]
 [ext_resource type="Texture2D" uid="uid://5ks2st5d7ri2" path="res://Content/Assets/UI/Background/Background.png" id="2_4t6kl"]
@@ -23,6 +23,15 @@
 [ext_resource type="Texture2D" uid="uid://dlkpfnabdur27" path="res://Content/Assets/UI/notifier.png" id="21_4855k"]
 [ext_resource type="Script" uid="uid://b6kothl3ilq1s" path="res://Content/Classes/UIManagment/Notifier.gd" id="21_cnhaw"]
 [ext_resource type="Script" uid="uid://dqmyjfy7haneo" path="res://Content/Classes/UIManagment/ChatManager.gd" id="23_2jnq7"]
+[ext_resource type="Texture2D" uid="uid://bmdt0ct1nyxvi" path="res://Content/Assets/UI/chat_frame.png" id="24_b64ag"]
+[ext_resource type="Texture2D" uid="uid://cv6jc0teipyrg" path="res://Content/Assets/UI/field_frame.png" id="24_drfiy"]
+[ext_resource type="Texture2D" uid="uid://orkosjl2hhud" path="res://Content/Assets/UI/chat_toggler.png" id="24_i2bqy"]
+[ext_resource type="AudioStream" uid="uid://cyv2fjuo0fx0k" path="res://Content/Assets/Sounds/Music/along-the-wayside-medieval-folk-music-128697.mp3" id="25_6vdgs"]
+[ext_resource type="Script" uid="uid://1yrjss4v00ao" path="res://Content/Classes/UIManagment/QPManager.gd" id="27_k3qy0"]
+[ext_resource type="Texture2D" uid="uid://bfpt5o8fuixuw" path="res://Content/Assets/UI/quickplay_window.png" id="27_ovcgw"]
+[ext_resource type="Texture2D" uid="uid://cvxjc4kfq8bs0" path="res://Content/Assets/Testable/quiet_sprite.png" id="29_eq4af"]
+[ext_resource type="Texture2D" uid="uid://bbbbu7b0e13rm" path="res://Content/Assets/UI/Result_window.png" id="30_qkwvo"]
+[ext_resource type="Script" uid="uid://io4atlepc1nb" path="res://Content/Classes/UIManagment/ResultsManager.gd" id="30_t8gk5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kiu1e"]
 atlas = ExtResource("2_4t6kl")
@@ -285,7 +294,450 @@ _data = {
 &"show": SubResource("Animation_cnhaw")
 }
 
-[node name="UISegment" type="Control" node_paths=PackedStringArray("menu_section_main", "menu_section_settings", "menu_section_leaderboard", "menu_label", "animator_main", "animator_settings", "animator_leaderboard")]
+[sub_resource type="Animation" id="Animation_b64ag"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(545, 569.167)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatTable:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(375, 595)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChatLine:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(385, 702.4997)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Leaderboard:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Menu:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Main:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ChatToggler:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ChatFrame:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(375, 608.3331)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Quickplay:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-107, -75.4)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../GameResults:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_drfiy"]
+resource_name = "collapse"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(545, 425), Vector2(545, 481), Vector2(545, 562)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatTable:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 460), Vector2(375, 515), Vector2(375, 595)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChatLine:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(385, 566.6665), Vector2(385, 622.4999), Vector2(385, 703.3334)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Leaderboard:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Menu:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Main:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -103.666626), Vector2(-89.167, -62)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ChatFrame:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 455.00018), Vector2(375, 510.00018), Vector2(375, 589.99976), Vector2(375, 602.4998)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Quickplay:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-107, -116), Vector2(-107, -75)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../GameResults:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -41), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6vdgs"]
+resource_name = "expand"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(545, 563), Vector2(545, 523), Vector2(545, 425)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChatTable:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 595), Vector2(375, 557), Vector2(375, 460)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChatLine:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(385, 702.4997), Vector2(385, 664.1664), Vector2(385, 566.6665)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Settings:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Leaderboard:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Menu:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Main:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-89.1666, -62.8333), Vector2(-89.1666, -103.666626)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ChatFrame:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(375, 589.99976), Vector2(375, 551.6669), Vector2(375, 455.00018)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Quickplay:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-107, -75.4), Vector2(-107, -116)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../GameResults:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -41)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ovcgw"]
+_data = {
+&"RESET": SubResource("Animation_b64ag"),
+&"chat_collapse": SubResource("Animation_drfiy"),
+&"chat_expand": SubResource("Animation_6vdgs")
+}
+
+[sub_resource type="Animation" id="Animation_k3qy0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ovcgw"]
+resource_name = "button_hover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_eq4af"]
+resource_name = "button_unhover"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChatToggler:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkwvo"]
+_data = {
+&"RESET": SubResource("Animation_k3qy0"),
+&"button_hover": SubResource("Animation_ovcgw"),
+&"button_unhover": SubResource("Animation_eq4af")
+}
+
+[node name="UISegment" type="Control" node_paths=PackedStringArray("menu_section_main", "menu_section_settings", "menu_section_leaderboard", "menu_label", "menu_quickplay", "menu_result", "animator_main", "animator_settings", "animator_leaderboard")]
 z_index = -1
 texture_filter = 1
 layout_mode = 3
@@ -294,8 +746,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -107.0
 offset_top = -75.4
-offset_right = -107.0
-offset_bottom = -75.4
+offset_right = 6.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -304,6 +756,8 @@ menu_section_main = NodePath("CanvasLayer/Main/MainWindow")
 menu_section_settings = NodePath("CanvasLayer/Settings")
 menu_section_leaderboard = NodePath("CanvasLayer/Leaderboard/LeaderboardWindow")
 menu_label = NodePath("CanvasLayer/Menu/MenuWindow/Label")
+menu_quickplay = NodePath("CanvasLayer/Quickplay")
+menu_result = NodePath("CanvasLayer/GameResults")
 animator_main = NodePath("CanvasLayer/Main/animator")
 animator_settings = NodePath("CanvasLayer/Settings/animator")
 animator_leaderboard = NodePath("CanvasLayer/Leaderboard/animator")
@@ -316,21 +770,20 @@ transform = Transform2D(1.2, 0, 0, 1.2, 0, 0)
 position = Vector2(545, 301.667)
 scale = Vector2(2.3, 2.278)
 sprite_frames = SubResource("SpriteFrames_n1c7k")
-animation = &"idle_2"
-frame = 9
-frame_progress = 1.0
 script = ExtResource("6_2j6l0")
 
-[node name="Settings" type="Control" parent="CanvasLayer"]
+[node name="Settings" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("music_slider", "audio_slider")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -89.1666
 offset_top = -62.8333
 offset_right = -49.1666
-offset_bottom = -22.8333
+offset_bottom = -22.833302
 script = ExtResource("7_ntfnx")
 bus_name_music = "Music"
 bus_name_audio = "Audio"
+music_slider = NodePath("SettingsWindow/MusicSlider")
+audio_slider = NodePath("SettingsWindow/AudioSlider")
 
 [node name="SettingsWindow" type="TextureRect" parent="CanvasLayer/Settings"]
 layout_mode = 0
@@ -377,7 +830,7 @@ anchors_preset = 0
 offset_left = -89.1666
 offset_top = -62.8333
 offset_right = -49.1666
-offset_bottom = -22.8333
+offset_bottom = -22.833302
 script = ExtResource("11_0nvf4")
 places = [NodePath("LeaderboardWindow/Place1/Label1"), NodePath("LeaderboardWindow/Place2/Label2"), NodePath("LeaderboardWindow/Place3/Label3"), NodePath("LeaderboardWindow/Place4/Label4"), NodePath("LeaderboardWindow/Place5/Label5"), NodePath("LeaderboardWindow/Place6/Label6")]
 
@@ -513,7 +966,7 @@ anchors_preset = 0
 offset_left = -89.1666
 offset_top = -62.8333
 offset_right = -49.1666
-offset_bottom = -22.8333
+offset_bottom = -22.833302
 
 [node name="MenuWindow" type="TextureRect" parent="CanvasLayer/Menu"]
 layout_mode = 0
@@ -628,7 +1081,7 @@ anchors_preset = 0
 offset_left = -89.1666
 offset_top = -62.8333
 offset_right = -49.1666
-offset_bottom = -22.8333
+offset_bottom = -22.833302
 
 [node name="MainWindow" type="TextureRect" parent="CanvasLayer/Main"]
 z_index = 1
@@ -680,38 +1133,270 @@ libraries = {
 &"": SubResource("AnimationLibrary_6vdgs")
 }
 
-[node name="Chat" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("input_field", "chat_table")]
+[node name="Chat" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("chat_field", "chat_table", "chat_animator", "toggler_animator", "chat_toggler")]
+layout_mode = 3
+anchor_right = 0.83400005
+anchor_bottom = 0.83300006
+offset_right = -1010.85333
+offset_bottom = -541.42676
+script = ExtResource("23_2jnq7")
+chat_field = NodePath("ChatLine")
+chat_table = NodePath("ChatTable")
+chat_animator = NodePath("ChatAnimator")
+toggler_animator = NodePath("TogglerAnimator")
+chat_toggler = NodePath("ChatToggler")
+
+[node name="ChatTable" type="TextEdit" parent="CanvasLayer/Chat"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 595.0
+offset_right = 775.0
+offset_bottom = 695.0013
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+editable = false
+
+[node name="ChatLine" type="LineEdit" parent="CanvasLayer/Chat"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 702.4997
+offset_right = 765.0
+offset_bottom = 733.4997
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Chat/ChatLine"]
+layout_mode = 0
+offset_left = -1.666687
+offset_right = 190.33331
+offset_bottom = 16.0
+scale = Vector2(2, 2)
+texture = ExtResource("24_drfiy")
+
+[node name="ChatAnimator" type="AnimationPlayer" parent="CanvasLayer/Chat"]
+libraries = {
+&"": SubResource("AnimationLibrary_ovcgw")
+}
+
+[node name="ChatToggler" type="TextureButton" parent="CanvasLayer/Chat"]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 569.167
+offset_right = 605.0
+offset_bottom = 597.1679
+pivot_offset = Vector2(30, 9)
+texture_normal = ExtResource("24_i2bqy")
+texture_pressed = ExtResource("24_i2bqy")
+texture_hover = ExtResource("24_i2bqy")
+texture_disabled = ExtResource("24_i2bqy")
+texture_focused = ExtResource("24_i2bqy")
+stretch_mode = 0
+
+[node name="TogglerAnimator" type="AnimationPlayer" parent="CanvasLayer/Chat"]
+libraries = {
+&"": SubResource("AnimationLibrary_qkwvo")
+}
+
+[node name="ChatFrame" type="TextureRect" parent="CanvasLayer/Chat"]
+show_behind_parent = true
+z_index = 1
+layout_mode = 0
+offset_left = 375.0
+offset_top = 608.3331
+offset_right = 575.00006
+offset_bottom = 662.3343
+scale = Vector2(2, 2)
+mouse_filter = 2
+texture = ExtResource("24_b64ag")
+
+[node name="Quickplay" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("character_image", "character_label", "previous_button", "next_button", "select_button")]
+layout_mode = 3
+anchor_right = 0.83100003
+anchor_bottom = 0.82400006
+offset_left = -107.0
+offset_top = -75.4
+offset_right = -937.8467
+offset_bottom = -499.1152
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("27_k3qy0")
+character_image = NodePath("CharacterImage")
+character_label = NodePath("QPWindow/CharacterLabel")
+previous_button = NodePath("QPWindow/LeftButton")
+next_button = NodePath("QPWindow/RightButton")
+select_button = NodePath("QPWindow/PickButton")
+
+[node name="QPWindow" type="TextureRect" parent="CanvasLayer/Quickplay"]
+z_index = 1
+layout_mode = 0
+offset_left = 697.0
+offset_top = 233.73338
+offset_right = 817.0
+offset_bottom = 377.7334
+scale = Vector2(2, 2)
+texture = ExtResource("27_ovcgw")
+
+[node name="PickButton" type="Button" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.424
+anchor_top = -0.523
+anchor_right = 2.02
+anchor_bottom = 1.5400001
+offset_left = 324.21332
+offset_top = 192.81198
+offset_right = -155.31668
+offset_bottom = -93.01007
+flat = true
+
+[node name="LeftButton" type="Button" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.4160001
+anchor_top = -0.49600002
+anchor_right = 1.983
+anchor_bottom = 1.511
+offset_left = 298.25333
+offset_top = 188.92398
+offset_right = -209.21
+offset_bottom = -88.83412
+flat = true
+
+[node name="RightButton" type="Button" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.4160001
+anchor_top = -0.49600002
+anchor_right = 1.983
+anchor_bottom = 1.511
+offset_left = 381.17
+offset_top = 188.09065
+offset_right = -126.29336
+offset_bottom = -89.66745
+flat = true
+
+[node name="CharacterLabel" type="Label" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 0
+offset_left = 14.166664
+offset_top = 92.49997
+offset_right = 105.83332
+offset_bottom = 115.49997
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonbLabel" type="Label" parent="CanvasLayer/Quickplay/QPWindow"]
+layout_mode = 0
+offset_left = 32.083305
+offset_top = 111.24997
+offset_right = 88.083305
+offset_bottom = 134.24997
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+text = "ВЫБРАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterImage" type="TextureRect" parent="CanvasLayer/Quickplay"]
+z_index = 1
+layout_mode = 0
+offset_left = 737.8333
+offset_top = 250.83333
+offset_right = 902.0
+offset_bottom = 413.3333
+texture = ExtResource("29_eq4af")
+stretch_mode = 4
+
+[node name="GameResults" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("label_for_kills", "label_for_deaths", "label_for_killstreak", "label_for_score", "label_for_result")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("23_2jnq7")
-input_field = NodePath("LineEdit")
-chat_table = NodePath("TextEdit")
+script = ExtResource("30_t8gk5")
+label_for_kills = NodePath("TextureRect/LabelKills")
+label_for_deaths = NodePath("TextureRect/LabelDeaths")
+label_for_killstreak = NodePath("TextureRect/LabelKillStreak")
+label_for_score = NodePath("TextureRect/LabelScore")
+label_for_result = NodePath("TextureRect/LabelResult")
 
-[node name="TextEdit" type="TextEdit" parent="CanvasLayer/Chat"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GameResults"]
 layout_mode = 0
-offset_left = 900.0
-offset_top = 335.0
-offset_right = 1100.0
-offset_bottom = 435.0
+offset_left = 590.0
+offset_top = 246.66667
+offset_right = 748.0
+offset_bottom = 326.6667
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("30_qkwvo")
+
+[node name="LabelKills" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
+layout_mode = 0
+offset_left = 6.249949
+offset_top = 7.9166665
+offset_right = 23.749979
+offset_bottom = 21.666666
 theme_override_fonts/font = ExtResource("4_4ls13")
 theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Chat"]
+[node name="LabelDeaths" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
 layout_mode = 0
-offset_left = 900.0
-offset_top = 442.5
-offset_right = 1100.0
-offset_bottom = 473.5
+offset_left = 6.249949
+offset_top = 25.0
+offset_right = 23.749979
+offset_bottom = 38.75
 theme_override_fonts/font = ExtResource("4_4ls13")
 theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelKillStreak" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
+layout_mode = 0
+offset_left = 6.249949
+offset_top = 42.083332
+offset_right = 23.749979
+offset_bottom = 55.833347
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelScore" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
+layout_mode = 0
+offset_left = 6.2499504
+offset_top = 59.166664
+offset_right = 23.74998
+offset_bottom = 72.91668
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelResult" type="Label" parent="CanvasLayer/GameResults/TextureRect"]
+layout_mode = 0
+offset_left = 46.249973
+offset_top = -15.416666
+offset_right = 112.5
+offset_bottom = 7.583334
+theme_override_colors/font_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+theme_override_fonts/font = ExtResource("4_4ls13")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_6vdgs")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="animation_finished" from="CanvasLayer/Background" to="CanvasLayer/Background" method="_on_animation_finished"]
-[connection signal="value_changed" from="CanvasLayer/Settings/SettingsWindow/MusicSlider" to="CanvasLayer/Settings" method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="CanvasLayer/Settings/SettingsWindow/AudioSlider" to="CanvasLayer/Settings" method="_on_audio_slider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Quickplay" to="." method="_on_quickplay_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/MenuWindow/Back" to="." method="_on_back_pressed"]
 [connection signal="animation_finished" from="CanvasLayer/Notifier/AnimationPlayer" to="CanvasLayer/Notifier" method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/Quickplay/QPWindow/PickButton" to="." method="_on_pick_pressed"]
